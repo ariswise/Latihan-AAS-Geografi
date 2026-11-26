@@ -1,0 +1,1867 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Latihan Asesmen Akhir Semester Geografi - Paket A & B</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 5px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #f1f5f9;
+      border-radius: 8px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 8px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-800 h-dvh overflow-hidden flex flex-col">
+
+  <!-- HEADER UTAMA -->
+  <header class="bg-gradient-to-r from-emerald-800 via-teal-800 to-cyan-900 text-white shadow-md shrink-0 z-30">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2 sm:py-2.5 flex items-center justify-between gap-2">
+      <!-- Kiri: Judul & Identitas Ujian -->
+      <div class="flex items-center gap-2 min-w-0">
+        <div class="bg-white/15 p-1.5 sm:p-2 rounded-xl backdrop-blur-sm border border-white/20 shrink-0">
+          <svg class="w-5 h-5 sm:w-6 sm:h-6 text-emerald-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M2 12h20"></path>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+        </div>
+        <div class="min-w-0">
+          <h1 class="text-xs sm:text-lg font-bold tracking-tight leading-tight truncate">
+            LATIHAN ASESMEN AKHIR SEMESTER
+          </h1>
+          <p id="header-subtitle" class="text-[10px] sm:text-xs text-emerald-200 font-medium truncate">
+            Geografi &bull; Kelas X SMA/MA
+          </p>
+        </div>
+      </div>
+
+      <!-- Kanan Atas: Waktu Berjalan (Timer) -->
+      <div class="flex items-center shrink-0">
+        <div id="timer-box" class="flex items-center gap-1.5 sm:gap-2 bg-slate-900/60 border border-emerald-400/40 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-xl shadow-inner">
+          <svg id="timer-icon" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-300 animate-pulse shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          <div class="text-right">
+            <div class="hidden sm:block text-[9px] uppercase tracking-wider text-emerald-200 font-semibold leading-none">Waktu Tersisa</div>
+            <div id="timer-display" class="text-xs sm:text-lg font-extrabold font-mono tracking-wider text-white leading-tight">
+              01:00:00
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- KONTEN UTAMA -->
+  <main class="flex-1 min-h-0 max-w-7xl w-full mx-auto px-2.5 sm:px-6 lg:px-8 py-2 sm:py-3 flex flex-col justify-center overflow-hidden">
+    
+    <!-- HALAMAN MULAI (WELCOME SCREEN / DASHBOARD MENU) -->
+    <section id="start-screen" class="max-w-3xl w-full mx-auto bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden flex flex-col max-h-full">
+      <div class="bg-gradient-to-r from-emerald-700 to-teal-700 px-4 py-2.5 sm:px-5 sm:py-3.5 text-white text-center shrink-0">
+        <span class="inline-block bg-white/20 text-emerald-100 text-[10px] sm:text-[11px] font-semibold px-2.5 py-0.5 rounded-full uppercase tracking-wider mb-1">
+          LATIHAN ASESMEN AKHIR SEMESTER
+        </span>
+        <h2 class="text-base sm:text-2xl font-extrabold">Selamat Datang Peserta Didik</h2>
+        <p class="text-emerald-100 text-[11px] sm:text-sm max-w-xl mx-auto mt-0.5">
+          Lengkapi identitas diri dan pilih paket soal sebelum memulai latihan.
+        </p>
+      </div>
+
+      <div class="p-3 sm:p-5 space-y-2.5 overflow-y-auto custom-scrollbar">
+        <!-- Info Ujian -->
+        <div class="grid grid-cols-3 gap-1.5 sm:gap-3 bg-slate-50 p-1.5 sm:p-2 rounded-xl border border-slate-200 text-center">
+          <div>
+            <div class="text-[10px] text-slate-500 uppercase font-semibold">Soal</div>
+            <div class="text-xs sm:text-base font-bold text-slate-800">40 PG / Paket</div>
+          </div>
+          <div class="border-x border-slate-200">
+            <div class="text-[10px] text-slate-500 uppercase font-semibold">Waktu</div>
+            <div class="text-xs sm:text-base font-bold text-emerald-700">60 Menit</div>
+          </div>
+          <div>
+            <div class="text-[10px] text-slate-500 uppercase font-semibold">Materi</div>
+            <div class="text-[11px] sm:text-sm font-bold text-slate-800 leading-tight">Dasar Geo, Peta, PJ & SIG</div>
+          </div>
+        </div>
+
+        <!-- Form Identitas -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
+          <div>
+            <label for="student-name" class="block text-xs font-semibold text-slate-700 mb-1">Nama Lengkap Peserta</label>
+            <input type="text" id="student-name" placeholder="Contoh: Budi Santoso" class="w-full px-3 py-1.5 sm:py-2 rounded-xl border border-slate-300 text-xs sm:text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition" />
+          </div>
+          <div>
+            <label for="student-class" class="block text-xs font-semibold text-slate-700 mb-1">Kelas / Nomor Absen</label>
+            <input type="text" id="student-class" placeholder="Contoh: X-1 / 08" class="w-full px-3 py-1.5 sm:py-2 rounded-xl border border-slate-300 text-xs sm:text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition" />
+          </div>
+        </div>
+
+        <!-- Pilihan Paket Soal (Paket A & Paket B) -->
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">Pilih Paket Soal</label>
+          <div class="grid grid-cols-2 gap-2 sm:gap-3">
+            <button type="button" id="btn-select-paket-a" class="package-btn flex items-center justify-between p-2.5 sm:p-3 rounded-xl border-2 border-emerald-600 bg-emerald-50 text-emerald-950 transition cursor-pointer text-left">
+              <div>
+                <div class="text-xs sm:text-sm font-extrabold">Paket Soal A</div>
+                <div class="text-[10px] sm:text-xs text-emerald-700">40 Soal Kisi-Kisi Utama</div>
+              </div>
+              <span id="badge-paket-a" class="w-5 h-5 rounded-full bg-emerald-600 text-white flex items-center justify-center text-xs font-bold shrink-0">✓</span>
+            </button>
+
+            <button type="button" id="btn-select-paket-b" class="package-btn flex items-center justify-between p-2.5 sm:p-3 rounded-xl border-2 border-slate-200 bg-white hover:border-teal-400 text-slate-700 transition cursor-pointer text-left">
+              <div>
+                <div class="text-xs sm:text-sm font-extrabold">Paket Soal B</div>
+                <div class="text-[10px] sm:text-xs text-slate-500">40 Soal Variasi Setara</div>
+              </div>
+              <span id="badge-paket-b" class="w-5 h-5 rounded-full border-2 border-slate-300 text-transparent flex items-center justify-center text-xs font-bold shrink-0">✓</span>
+            </button>
+          </div>
+        </div>
+
+        <div id="start-error" class="hidden text-xs text-rose-600 bg-rose-50 border border-rose-200 px-3 py-1.5 rounded-xl font-medium">
+          Harap lengkapi Nama Lengkap dan Kelas terlebih dahulu sebelum memulai latihan.
+        </div>
+
+        <!-- Petunjuk Pengerjaan -->
+        <div class="bg-amber-50/80 border border-amber-200 rounded-xl p-2 sm:p-2.5 text-xs text-amber-900">
+          <div class="font-bold flex items-center gap-1.5 mb-1">
+            <svg class="w-3.5 h-3.5 text-amber-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+            Petunjuk Pengerjaan:
+          </div>
+          <ul class="list-disc list-inside text-[11px] sm:text-xs text-amber-800 space-y-0.5 leading-snug">
+            <li>Klik salah satu opsi jawaban (<strong>A, B, C, D, atau E</strong>) pada setiap halaman soal.</li>
+            <li>Gunakan tombol <strong>Sebelumnya</strong>, <strong>Selanjutnya</strong>, atau klik langsung <strong>Nomor Soal</strong> di sisi kanan untuk berpindah halaman.</li>
+            <li>Tandai soal dengan tombol <strong>Ragu-ragu</strong> apabila ingin meninjau ulang jawaban, lalu klik <strong>Mulai Mengerjakan</strong>.</li>
+          </ul>
+        </div>
+
+        <button id="btn-start-quiz" class="w-full py-2.5 px-6 bg-emerald-700 hover:bg-emerald-800 active:scale-[0.99] text-white font-bold rounded-xl shadow-md hover:shadow-lg transition flex items-center justify-center gap-2 text-xs sm:text-base cursor-pointer">
+          <span>Mulai Mengerjakan (<span id="start-btn-package-label">Paket A</span>)</span>
+          <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- HALAMAN KUIS UTAMA (TERSEMBUNYI SAAT DI DASHBOARD MENU) -->
+    <section id="quiz-screen" style="display: none;" class="hidden flex-col lg:grid lg:grid-cols-12 gap-2 sm:gap-4 h-full min-h-0">
+      
+      <!-- KOLOM KIRI: AREA SOAL & OPSI JAWABAN -->
+      <div class="flex-1 lg:col-span-8 bg-white rounded-2xl shadow-md border border-slate-200 overflow-hidden flex flex-col min-h-0">
+        
+        <!-- Bar Informasi Soal -->
+        <div class="bg-slate-50 border-b border-slate-200 px-3 sm:px-4 py-2 flex items-center justify-between gap-2 shrink-0">
+          <div class="flex items-center gap-1.5 min-w-0">
+            <span id="current-package-badge" class="bg-slate-800 text-white text-[11px] sm:text-xs font-bold px-2 py-1 rounded-lg shrink-0">
+              Paket A
+            </span>
+            <span class="bg-emerald-700 text-white text-xs font-extrabold px-2.5 py-1 rounded-lg shadow-sm shrink-0">
+              No. <span id="current-q-num">1</span>
+            </span>
+            <span id="current-topic-badge" class="text-[11px] sm:text-xs font-semibold text-teal-800 bg-teal-100/80 border border-teal-200 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg truncate">
+              Pengetahuan Dasar Geografi
+            </span>
+          </div>
+          <div class="flex items-center gap-1.5 shrink-0">
+            <span class="hidden sm:inline text-xs text-slate-500 font-medium">
+              Peserta: <span id="display-student-info" class="font-bold text-slate-700">-</span>
+            </span>
+            <!-- Tombol Toggle Daftar Nomor Soal Khusus Layar HP -->
+            <button id="btn-mobile-nav" type="button" class="lg:hidden flex items-center gap-1 bg-slate-800 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg shadow-xs cursor-pointer">
+              <span>Nomor (<span id="mobile-answered-count">0</span>/40)</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Isi Pertanyaan & Ilustrasi -->
+        <div class="p-3 sm:p-5 flex-1 min-h-0 overflow-y-auto custom-scrollbar flex flex-col justify-between gap-2.5">
+          <div class="space-y-2">
+            <div id="question-illustration" class="hidden bg-slate-50 border border-slate-200 rounded-xl p-1.5 flex justify-center items-center"></div>
+            <div id="question-text" class="text-xs sm:text-base text-slate-800 font-medium leading-relaxed">
+              Memuat pertanyaan...
+            </div>
+          </div>
+
+          <!-- Daftar Tombol Opsi Jawaban (A - E) -->
+          <div id="options-container" class="space-y-1.5 sm:space-y-2"></div>
+
+          <!-- Box Kunci Jawaban & Pembahasan Khusus Mode Admin -->
+          <div id="admin-answer-box" class="hidden bg-indigo-50 border border-indigo-200 rounded-xl p-2.5 sm:p-3 text-xs text-indigo-950 space-y-1 shadow-xs">
+            <div class="font-bold text-indigo-800 flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-indigo-600 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path>
+              </svg>
+              <span>Kunci: <span id="admin-correct-option" class="underline"></span></span>
+            </div>
+            <p id="admin-explanation-text" class="text-[11px] sm:text-xs text-indigo-900 leading-relaxed"></p>
+          </div>
+        </div>
+
+        <!-- Navigasi Bawah Soal -->
+        <div class="bg-slate-50 border-t border-slate-200 px-2.5 sm:px-4 py-2 flex items-center justify-between gap-1.5 shrink-0">
+          <button id="btn-prev" class="px-2.5 sm:px-3.5 py-2 rounded-xl border border-slate-300 bg-white hover:bg-slate-100 text-slate-700 font-semibold text-xs sm:text-sm flex items-center gap-1 transition disabled:opacity-40 disabled:pointer-events-none cursor-pointer">
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            <span class="hidden sm:inline">Sebelumnya</span>
+          </button>
+
+          <div class="flex items-center gap-1.5">
+            <!-- Tombol Buka Jawaban (Khusus Mode Admin) -->
+            <button id="btn-admin-reveal" type="button" class="hidden px-2.5 sm:px-3.5 py-2 rounded-xl border border-indigo-300 bg-indigo-50 hover:bg-indigo-100 text-indigo-800 font-semibold text-xs sm:text-sm items-center gap-1 transition cursor-pointer">
+              <svg class="w-4 h-4 text-indigo-600 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+              </svg>
+              <span id="btn-admin-reveal-text">Buka Jawaban</span>
+            </button>
+
+            <button id="btn-flag" class="px-2.5 sm:px-3.5 py-2 rounded-xl border border-amber-300 bg-amber-50 hover:bg-amber-100 text-amber-800 font-semibold text-xs sm:text-sm flex items-center gap-1.5 transition cursor-pointer">
+              <input type="checkbox" id="flag-checkbox" class="w-3.5 h-3.5 sm:w-4 sm:h-4 accent-amber-500 rounded pointer-events-none" />
+              <span>Ragu</span>
+            </button>
+
+            <!-- Tombol Selesai cepat khusus HP -->
+            <button id="btn-mobile-finish" type="button" class="lg:hidden px-2.5 py-2 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs shadow-xs transition cursor-pointer">
+              Kumpul
+            </button>
+          </div>
+
+          <button id="btn-next" class="px-3 sm:px-4 py-2 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-semibold text-xs sm:text-sm flex items-center gap-1 shadow-sm transition cursor-pointer">
+            <span id="btn-next-text">Selanjutnya</span>
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- KOLOM KANAN: NAVIGASI NOMOR SOAL -->
+      <aside id="nav-sidebar" class="hidden lg:flex fixed inset-0 z-40 lg:static lg:z-auto bg-slate-900/60 lg:bg-transparent p-3 sm:p-6 lg:p-0 items-center justify-center lg:col-span-4 h-full min-h-0">
+        <div class="bg-white rounded-2xl shadow-xl lg:shadow-md border border-slate-200 p-4 flex flex-col w-full max-w-md lg:max-w-none max-h-[85dvh] lg:h-full min-h-0 justify-between">
+          <div class="flex items-center justify-between pb-2.5 mb-2.5 border-b border-slate-200 shrink-0">
+            <h3 class="font-bold text-slate-800 text-sm sm:text-base flex items-center gap-2">
+              <svg class="w-4 h-4 text-emerald-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <rect x="3" y="3" width="7" height="7" rx="1"></rect>
+                <rect x="14" y="3" width="7" height="7" rx="1"></rect>
+                <rect x="14" y="14" width="7" height="7" rx="1"></rect>
+                <rect x="3" y="14" width="7" height="7" rx="1"></rect>
+              </svg>
+              Navigasi Nomor Soal
+            </h3>
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-bold bg-slate-100 text-slate-700 px-2.5 py-0.5 rounded-lg border border-slate-200">
+                <span id="answered-count">0</span> / 40 Terjawab
+              </span>
+              <button id="btn-close-mobile-nav" type="button" class="lg:hidden p-1 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 cursor-pointer">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Grid Nomor Soal 1 - 40 -->
+          <div id="question-grid" class="grid grid-cols-5 gap-1.5 flex-1 min-h-0 overflow-y-auto pr-1 custom-scrollbar content-start"></div>
+
+          <div class="shrink-0">
+            <div class="mt-2.5 pt-2.5 border-t border-slate-200 grid grid-cols-2 gap-1.5 text-[11px] text-slate-600">
+              <div class="flex items-center gap-1.5">
+                <span class="w-3.5 h-3.5 rounded bg-emerald-600 inline-block shrink-0"></span>
+                <span>Sudah Dijawab</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="w-3.5 h-3.5 rounded bg-amber-400 inline-block shrink-0"></span>
+                <span>Ragu-ragu</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="w-3.5 h-3.5 rounded ring-2 ring-teal-700 bg-teal-50 inline-block shrink-0"></span>
+                <span>Sedang Dibuka</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="w-3.5 h-3.5 rounded bg-slate-100 border border-slate-300 inline-block shrink-0"></span>
+                <span>Belum Dijawab</span>
+              </div>
+            </div>
+
+            <button id="btn-finish-quiz" class="mt-3 w-full py-2.5 px-4 bg-rose-600 hover:bg-rose-700 active:scale-[0.99] text-white font-bold rounded-xl shadow-sm transition flex items-center justify-center gap-2 text-xs sm:text-sm cursor-pointer">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Selesai & Kumpulkan Jawaban</span>
+            </button>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- HALAMAN HASIL & PEMBAHASAN (RESULT SCREEN) -->
+    <section id="result-screen" style="display: none;" class="hidden max-w-4xl w-full mx-auto h-full min-h-0 overflow-y-auto custom-scrollbar space-y-4 py-1">
+      <div class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
+        <div class="bg-gradient-to-r from-emerald-800 to-teal-800 px-5 py-4 text-white text-center">
+          <span class="inline-block bg-white/20 text-emerald-100 text-[10px] sm:text-xs font-semibold px-3 py-0.5 rounded-full uppercase tracking-wider mb-1">
+            Hasil Latihan Asesmen Akhir Semester
+          </span>
+          <h2 class="text-xl sm:text-2xl font-extrabold">Rekapitulasi Nilai Peserta</h2>
+          <p id="result-student-identity" class="text-emerald-100 text-xs sm:text-sm mt-1">
+            Peserta: - &bull; Kelas: - &bull; Paket: -
+          </p>
+        </div>
+
+        <div class="p-4 sm:p-6">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+            <!-- Kartu Nilai Akhir -->
+            <div class="bg-emerald-50 border-2 border-emerald-200 rounded-2xl p-5 text-center">
+              <div class="text-xs font-bold text-emerald-700 uppercase tracking-wider">Nilai Akhir</div>
+              <div id="final-score" class="text-4xl sm:text-5xl font-extrabold text-emerald-800 my-1">0</div>
+              <div id="score-predicate" class="inline-block bg-emerald-700 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                -
+              </div>
+              <div id="gsheet-sync-status" class="mt-3 text-[11px] font-medium text-slate-500"></div>
+            </div>
+
+            <!-- Statistik Jawaban -->
+            <div class="md:col-span-2 grid grid-cols-2 gap-3">
+              <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+                <div class="text-xs text-slate-500 font-semibold">Jawaban Benar</div>
+                <div id="stat-correct" class="text-2xl font-extrabold text-emerald-600 mt-1">0</div>
+              </div>
+              <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+                <div class="text-xs text-slate-500 font-semibold">Jawaban Salah</div>
+                <div id="stat-wrong" class="text-2xl font-extrabold text-rose-600 mt-1">0</div>
+              </div>
+              <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+                <div class="text-xs text-slate-500 font-semibold">Tidak Dijawab</div>
+                <div id="stat-unanswered" class="text-2xl font-extrabold text-slate-600 mt-1">0</div>
+              </div>
+              <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+                <div class="text-xs text-slate-500 font-semibold">Waktu Pengerjaan</div>
+                <div id="stat-time-used" class="text-lg font-extrabold text-teal-700 mt-1.5">00:00</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tombol Aksi Hasil -->
+          <div class="mt-6 pt-6 border-t border-slate-200 flex flex-wrap justify-center gap-3">
+            <button id="btn-toggle-review" class="px-5 py-2.5 rounded-xl bg-teal-700 hover:bg-teal-800 text-white font-semibold text-sm transition cursor-pointer">
+              Tampilkan / Sembunyikan Pembahasan Soal
+            </button>
+            <button id="btn-restart" class="px-5 py-2.5 rounded-xl border border-slate-300 bg-white hover:bg-slate-100 text-slate-700 font-semibold text-sm transition cursor-pointer">
+              Ulangi Ujian Dari Awal
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rekap Kunci Jawaban & Pembahasan (Hanya Soal yang Sudah Dijawab) -->
+      <div id="review-container" class="hidden bg-white rounded-2xl shadow-md border border-slate-200 p-4 sm:p-6 space-y-4">
+        <div class="border-b border-slate-200 pb-3">
+          <h3 id="review-header-title" class="text-base sm:text-lg font-bold text-slate-800">
+            Tinjauan Jawaban & Pembahasan
+          </h3>
+          <p class="text-xs text-slate-500 mt-0.5">
+            Hanya menampilkan pembahasan untuk soal-soal yang telah Anda jawab.
+          </p>
+        </div>
+        <div id="review-list" class="space-y-4"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL KONFIRMASI KUSTOM -->
+  <div id="confirm-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-slate-200 space-y-4">
+      <div class="flex items-center gap-3 text-rose-600">
+        <div class="bg-rose-100 p-2.5 rounded-xl">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+          </svg>
+        </div>
+        <h3 class="text-lg font-bold text-slate-800">Konfirmasi Selesai Ujian</h3>
+      </div>
+      <p id="confirm-message" class="text-sm text-slate-600 leading-relaxed">
+        Apakah Anda yakin ingin mengakhiri ujian dan mengumpulkan semua jawaban sekarang?
+      </p>
+      <div class="flex justify-end gap-2.5 pt-2">
+        <button id="btn-cancel-finish" class="px-4 py-2 rounded-xl border border-slate-300 text-slate-700 hover:bg-slate-100 font-semibold text-sm transition cursor-pointer">
+          Kembali Mengerjakan
+        </button>
+        <button id="btn-confirm-finish" class="px-4 py-2 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-semibold text-sm shadow-sm transition cursor-pointer">
+          Ya, Kumpulkan
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER DENGAN TEKS PENGEMBANG -->
+  <footer class="bg-white border-t border-slate-200 py-1.5 sm:py-2.5 shrink-0 z-20">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 flex items-center justify-between gap-2 text-[11px] sm:text-xs text-slate-600">
+      <div class="hidden sm:block">
+        Latihan Asesmen Akhir Semester Geografi &bull; Paket Soal A &amp; B
+      </div>
+      <div class="w-full sm:w-auto text-center font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-lg truncate">
+        Di Kembangkan Oleh : Aris Wicaksono, S.Pd.
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT LOGIKA APLIKASI KUIS & BANK SOAL PAKET A & B -->
+  <script>
+    // TEMPELKAN URL WEB APP GOOGLE APPS SCRIPT ANDA DI BAWAH INI (untuk Vercel / Google Sites):
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz4sYvfTaeNL14F47omH4evkP3BeczAks5xQydpZ-oCZVcSCliTajJMvJPr8vQgl1O0/exec";
+
+    // PAKET SOAL A (40 Soal sesuai Kisi-Kisi No. 1 - 40)
+    const questionsPackageA = [
+      {
+        no: 1,
+        topic: "Pengetahuan Dasar Geografi",
+        question: "Pada zaman Yunani Kuno, lahir sebuah karya tulis klasik berjudul <em>Geographica</em> yang memuat gambaran mengenai permukaan bumi serta berbagai wilayah di dunia. Tokoh geografi klasik yang pertama kali memperkenalkan istilah <em>geographika</em> (geo dan graphein) adalah ....",
+        options: ["Claudius Ptolomaeus", "Eratosthenes", "Strabo", "Herodotus", "Bernhardus Varenius"],
+        answer: 1,
+        explanation: "Eratosthenes (276–194 SM) adalah tokoh Yunani Kuno yang pertama kali memperkenalkan istilah geographika melalui karyanya yang berjudul Geographica."
+      },
+      {
+        no: 2,
+        topic: "Pengetahuan Dasar Geografi",
+        question: "Kajian ilmu geografi mempelajari seluruh lapisan geosfer yang berada di permukaan bumi, meliputi atmosfer (lapisan udara), litosfer (lapisan batuan), hidrosfer (lapisan air), biosfer (lapisan makhluk hidup), dan antroposfer (dinamika manusia). Keseluruhan fenomena geosfer tersebut dalam kajian geografi disebut ....",
+        options: ["Objek formal geografi", "Pendekatan keruangan", "Objek material geografi", "Prinsip korologi", "Aspek topologi geografi"],
+        answer: 2,
+        explanation: "Objek material geografi adalah sasaran atau isi kajian geografi yang berupa fenomena geosfer (atmosfer, litosfer, hidrosfer, biosfer, dan antroposfer)."
+      },
+      {
+        no: 3,
+        topic: "Pengetahuan Dasar Geografi",
+        question: "Susunan permukiman penduduk di wilayah pegunungan kapur (karst) cenderung tersebar mengelompok di sekitar sumber mata air atau dolina, sedangkan di wilayah dataran rendah sepanjang sungai cenderung memanjang mengikuti aliran sungai. Konsep esensial geografi yang paling tepat untuk mengkaji fenomena tersebut adalah ....",
+        options: ["Konsep morfologi", "Konsep aglomerasi", "Konsep pola", "Konsep keterjangkauan", "Konsep diferensiasi area"],
+        answer: 2,
+        explanation: "Konsep pola berkaitan dengan susunan, bentuk, atau persebaran fenomena di permukaan bumi, seperti pola permukiman memanjang, mengelompok, atau menyebar."
+      },
+      {
+        no: 4,
+        topic: "Pengetahuan Dasar Geografi",
+        question: "Harga lahan di kawasan pusat bisnis kota (Central Business District) jauh lebih mahal dibandingkan lahan di pinggiran kota karena letaknya berdekatan dengan pusat perbelanjaan, perkantoran, dan akses transportasi utama. Fenomena tersebut berkaitan erat dengan konsep ....",
+        options: ["Lokasi absolut", "Lokasi relatif", "Jarak absolut", "Keterjangkauan", "Nilai kegunaan"],
+        answer: 1,
+        explanation: "Lokasi relatif adalah posisi suatu tempat yang dinilai berdasarkan keterkaitannya dengan wilayah atau fasilitas di sekitarnya sehingga memengaruhi nilai ekonominya."
+      },
+      {
+        no: 5,
+        topic: "Pengetahuan Dasar Geografi",
+        question: "Tingginya angka kemiskinan dan terbatasnya lapangan pekerjaan di pedesaan mendorong terjadinya arus urbanisasi besar-besaran ke kota besar. Akibatnya, di kota muncul banyak permukiman kumuh (slum area) di bantaran sungai. Prinsip geografi yang sesuai untuk menjelaskan hubungan sebab-akibat tersebut adalah ....",
+        options: ["Prinsip distribusi", "Prinsip deskripsi", "Prinsip interelasi", "Prinsip korologi", "Prinsip lokasional"],
+        answer: 2,
+        explanation: "Prinsip interelasi menjelaskan hubungan timbal balik atau sebab-akibat antara satu fenomena dengan fenomena lain dalam suatu ruang."
+      },
+      {
+        no: 6,
+        topic: "Pengetahuan Dasar Geografi",
+        question: "Dalam menganalisis fenomena kekeringan di wilayah Nusa Tenggara Timur, seorang peneliti mengamati pola persebarannya, menganalisis hubungan timbal balik antara curah hujan dan kondisi geologi, serta menyajikannya dalam bentuk peta dan grafik secara komprehensif. Prinsip geografi yang diterapkan peneliti tersebut adalah ....",
+        options: ["Prinsip deskripsi", "Prinsip distribusi", "Prinsip interelasi", "Prinsip korologi", "Prinsip ekologi"],
+        answer: 3,
+        explanation: "Prinsip korologi merupakan prinsip geografi yang memadukan prinsip persebaran (distribusi), interelasi, dan deskripsi secara menyeluruh dalam satu kesatuan wilayah."
+      },
+      {
+        no: 7,
+        topic: "Pengetahuan Dasar Geografi",
+        question: "Bencana banjir bandang yang melanda permukiman warga di bagian hilir sungai diketahui terjadi akibat aktivitas penebangan hutan lindung secara liar oleh manusia di daerah hulu untuk dijadikan lahan perkebunan. Pendekatan geografi yang paling tepat digunakan untuk mengkaji kasus tersebut adalah ....",
+        options: ["Pendekatan keruangan (spatial approach)", "Pendekatan kelingkungan (ecological approach)", "Pendekatan kompleks wilayah (regional complex approach)", "Pendekatan kronologis", "Pendekatan korologi"],
+        answer: 1,
+        explanation: "Pendekatan kelingkungan (ekologi) mengkaji interaksi antara organisme hidup (khususnya aktivitas manusia) dengan lingkungan alamnya."
+      },
+      {
+        no: 8,
+        topic: "Pengetahuan Dasar Geografi",
+        question: "Perhatikan fenomena geosfer berikut ini:\n(1) Terjadinya gempa tektonik di zona subduksi\n(2) Erupsi gunung api tipe eksplosif\n(3) Pelapukan batuan akibat perubahan suhu ekstrem\n(4) Pergerakan arus laut hangat dan dingin\n\nKeempat fenomena tersebut dalam kajian geografi diklasifikasikan ke dalam ....",
+        options: ["Aspek sosial geografi", "Aspek budaya geografi", "Aspek fisik geografi", "Aspek ekonomi geografi", "Aspek demografi"],
+        answer: 2,
+        explanation: "Gempa bumi, vulkanisme, pelapukan batuan (litosfer), dan arus laut (hidrosfer) merupakan fenomena alamiah yang termasuk dalam aspek fisik geografi."
+      },
+      {
+        no: 9,
+        topic: "Pengetahuan Dasar Geografi",
+        question: "Kawasan dataran tinggi Dieng dimanfaatkan oleh penduduk lokal sebagai lahan pertanian kentang dan sayuran dataran tinggi, sedangkan bagi masyarakat perkotaan kawasan tersebut dimanfaatkan sebagai destinasi wisata alam dan budaya. Perbedaan pemanfaatan ruang ini mencerminkan konsep ....",
+        options: ["Konsep morfologi", "Konsep nilai kegunaan", "Konsep keterkaitan keruangan", "Konsep aglomerasi", "Konsep jarak"],
+        answer: 1,
+        explanation: "Konsep nilai kegunaan menyatakan bahwa manfaat atau kelebihan suatu wilayah bersifat relatif tergantung pada kebutuhan dan sudut pandang penggunanya."
+      },
+      {
+        no: 10,
+        topic: "Pengetahuan Dasar Geografi",
+        question: "Seorang peneliti melakukan kajian persebaran pusat perbelanjaan modern di Kota Surabaya dengan hanya menganalisis faktor kondisi topografi, jaringan jalan utama, dan ketersediaan lahan kosong tanpa mengaitkannya dengan perilaku sosial masyarakat. Pendekatan geografi yang digunakan peneliti adalah ....",
+        options: ["Pendekatan kelingkungan", "Pendekatan kompleks wilayah", "Pendekatan keruangan", "Pendekatan ekologi manusia", "Pendekatan historis"],
+        answer: 2,
+        explanation: "Pendekatan keruangan (spasial) berfokus pada analisis struktur, pola, dan proses keruangan suatu fenomena fisik/lokasi tanpa menitikberatkan interaksi perilaku sosial-lingkungan."
+      },
+      {
+        no: 11,
+        topic: "Pengetahuan Dasar Pemetaan",
+        question: "Gambaran konvensional permukaan bumi pada suatu bidang datar yang diperkecil menggunakan perbandingan skala tertentu serta dilengkapi dengan simbol-simbol dan tulisan sebagai penjelas disebut ....",
+        options: ["Globe", "Atlas", "Peta", "Citra satelit", "Maket wilayah"],
+        answer: 2,
+        explanation: "Peta adalah gambaran permukaan bumi pada bidang datar yang diperkecil dengan skala tertentu dan dilengkapi simbol serta keterangan."
+      },
+      {
+        no: 12,
+        topic: "Pengetahuan Dasar Pemetaan",
+        question: "Pada sebuah peta wilayah kabupaten terdapat kotak keterangan yang menjelaskan arti dari garis merah tebal sebagai jalan arteri, titik merah sebagai ibu kota kabupaten, dan warna biru sebagai perairan. Komponen kelengkapan peta yang memiliki fungsi tersebut adalah ....",
+        options: ["Inset peta", "Garis astronomis", "Orientasi arah", "Legenda", "Lettering"],
+        answer: 3,
+        explanation: "Legenda adalah komponen peta yang memuat keterangan arti berbagai simbol yang digunakan pada muka peta agar mudah dibaca pengguna."
+      },
+      {
+        no: 13,
+        topic: "Pengetahuan Dasar Pemetaan",
+        question: "Peta kepadatan penduduk Provinsi Jawa Barat, peta sebaran curah hujan bulanan, dan peta jalur evakuasi bencana tsunami di pesisir selatan Jawa dikelompokkan ke dalam jenis peta ....",
+        options: ["Peta umum", "Peta topografi", "Peta korografi", "Peta tematik", "Peta dunia"],
+        answer: 3,
+        explanation: "Peta tematik (peta khusus) adalah peta yang menggambarkan kenampakan atau informasi tertentu yang bersifat khusus di permukaan bumi."
+      },
+      {
+        no: 14,
+        topic: "Pengetahuan Dasar Pemetaan",
+        question: "Badan Pertanahan Nasional (BPN) sering menggunakan peta dengan rentang skala antara 1 : 100 hingga 1 : 5.000 untuk keperluan pengukuran dan pemetaan batas sertifikat kepemilikan tanah warga. Berdasarkan skalanya, jenis peta tersebut dinamakan ....",
+        options: ["Peta skala besar", "Peta skala sedang", "Peta kadaster", "Peta skala kecil", "Peta geografis"],
+        answer: 2,
+        explanation: "Peta kadaster (peta teknik) memiliki skala sangat besar antara 1 : 100 sampai 1 : 5.000, umumnya digunakan untuk peta hak milik tanah."
+      },
+      {
+        no: 15,
+        topic: "Pengetahuan Dasar Pemetaan",
+        question: "Wilayah kepulauan Indonesia terletak di sekitar garis khatulistiwa (0° LU/LS) dan membentang dari barat ke timur. Untuk memetakan wilayah Indonesia agar bentuk dan sudutnya tetap akurat dengan distorsi minimal, jenis proyeksi peta yang paling sesuai digunakan adalah ....",
+        options: ["Proyeksi kerucut normal", "Proyeksi azimutal polar", "Proyeksi silinder normal konform", "Proyeksi azimutal miring", "Proyeksi kerucut transversal"],
+        answer: 2,
+        explanation: "Proyeksi silinder (cylindrical) normal paling tepat untuk wilayah ekuator/khatulistiwa seperti Indonesia, dan sifat konform menjaga kesesuaian bentuk wilayah."
+      },
+      {
+        no: 16,
+        topic: "Pengetahuan Dasar Pemetaan",
+        question: "Diketahui skala sebuah peta wilayah adalah 1 : 250.000. Apabila jarak antara Kota P dan Kota Q pada peta tersebut terukur sepanjang 6 cm, maka jarak sebenarnya di lapangan adalah ....",
+        options: ["1,5 km", "15 km", "25 km", "150 km", "1.500 km"],
+        answer: 1,
+        explanation: "Jarak sebenarnya = Jarak pada peta × Penyebut skala = 6 cm × 250.000 = 1.500.000 cm. Diubah ke km (dibagi 100.000) = 15 km."
+      },
+      {
+        no: 17,
+        topic: "Pengetahuan Dasar Pemetaan",
+        question: "Pada saat melakukan interpretasi peta topografi, seorang siswa menemukan kenampakan garis-garis kontur yang berimpitan dan tersusun sangat rapat pada suatu lereng bukit. Kenampakan garis kontur tersebut menunjukkan kondisi morfologi berupa ....",
+        options: ["Dataran rendah yang landai", "Lembah sungai yang lebar", "Lereng yang sangat terjal atau curam", "Puncak dataran tinggi yang rata", "Cekungan danau yang dangkal"],
+        answer: 2,
+        explanation: "Semakin rapat jarak antargaris kontur pada peta topografi, semakin terjal atau curam kemiringan lereng wilayah tersebut."
+      },
+      {
+        no: 18,
+        topic: "Pengetahuan Dasar Pemetaan",
+        question: "Pada peta Pulau Bali terdapat sebuah peta kecil yang diletakkan di sudut dalam bingkai peta utama untuk menunjukkan posisi Pulau Bali terhadap Kepulauan Nusa Tenggara dan Pulau Jawa. Komponen kelengkapan peta tersebut dinamakan ....",
+        options: ["Garis tepi (border)", "Peta inset", "Sumber peta", "Garis lintang", "Simbol area"],
+        answer: 1,
+        explanation: "Peta inset adalah peta kecil tambahan yang disisipkan pada peta utama untuk menunjukkan lokasi daerah yang dipetakan terhadap wilayah yang lebih luas."
+      },
+      {
+        no: 19,
+        topic: "Pengetahuan Dasar Pemetaan",
+        question: "Jarak titik A ke titik B pada Peta X yang berskala 1 : 200.000 adalah 4 cm. Sedangkan pada Peta Y yang tidak tercantum skalanya, jarak titik A ke titik B yang sama terukur sepanjang 8 cm. Berdasarkan perbandingan tersebut, skala Peta Y adalah ....",
+        options: ["1 : 50.000", "1 : 100.000", "1 : 400.000", "1 : 800.000", "1 : 1.600.000"],
+        answer: 1,
+        explanation: "P2 = (d1 / d2) × P1 = (4 / 8) × 200.000 = 0,5 × 200.000 = 100.000. Jadi skala Peta Y adalah 1 : 100.000."
+      },
+      {
+        no: 20,
+        topic: "Penginderaan Jauh",
+        question: "Ilmu dan seni untuk memperoleh informasi mengenai suatu objek, daerah, atau gejala di permukaan bumi dengan jalan menganalisis data yang diperoleh menggunakan alat tanpa kontak langsung dengan objek yang dikaji disebut ....",
+        options: ["Kartografi", "Fotogrametri terestris", "Penginderaan jauh", "Sistem Informasi Geografis", "Survei lapangan"],
+        answer: 2,
+        explanation: "Menurut Lillesand dan Kiefer, penginderaan jauh (remote sensing) adalah ilmu dan seni memperoleh informasi objek/fenomena tanpa kontak langsung dengan objek tersebut."
+      },
+      {
+        no: 21,
+        topic: "Penginderaan Jauh",
+        question: "Dalam sistem penginderaan jauh sistem pasif, proses perekaman objek sangat bergantung pada sumber energi alami yang memancarkan gelombang elektromagnetik untuk menyinari objek di permukaan bumi pada siang hari. Komponen yang dimaksud adalah ....",
+        options: ["Tenaga gelombang radar", "Sinar matahari", "Sensor fotografik", "Wahana satelit", "Atmosfer bumi"],
+        answer: 1,
+        explanation: "Sistem penginderaan jauh pasif memanfaatkan sumber tenaga alami utama di bumi, yaitu pancaran sinar matahari."
+      },
+      {
+        no: 22,
+        topic: "Penginderaan Jauh",
+        question: "Tidak semua gelombang elektromagnetik dapat mencapai permukaan bumi karena sebagian diserap atau dihamburkan oleh gas dan partikel di udara. Bagian spektrum elektromagnetik yang mampu menembus atmosfer bumi dengan hambatan minimal dan sampai ke permukaan bumi disebut ....",
+        options: ["Spektrum tampak", "Jendela atmosfer", "Hamburan Rayleigh", "Gelombang mikro", "Refleksi spektral"],
+        answer: 1,
+        explanation: "Jendela atmosfer (atmospheric window) adalah bagian spektrum elektromagnetik yang dapat lolos menembus atmosfer dengan hambatan serapan/hamburan yang sangat kecil."
+      },
+      {
+        no: 23,
+        topic: "Penginderaan Jauh",
+        question: "Alat perekam yang dipasang pada wahana pesawat terbang, drone, atau satelit yang berfungsi untuk menangkap, menerima, dan merekam pantulan maupun pancaran gelombang elektromagnetik dari objek di permukaan bumi adalah ....",
+        options: ["Wahana", "Perolehan data", "Sensor", "Pengguna data", "Atmosfer"],
+        answer: 2,
+        explanation: "Sensor adalah alat pemantau/perekam (seperti kamera udara atau pemindai multispektral) yang dipasang pada wahana untuk merekam energi dari objek."
+      },
+      {
+        no: 24,
+        topic: "Penginderaan Jauh",
+        question: "Pada citra foto udara hitam putih, tubuh air yang jernih dan dalam tampak berwarna gelap, sedangkan atap seng bangunan yang memantulkan banyak cahaya tampak sangat cerah. Unsur interpretasi citra yang berkaitan dengan tingkat kecerahan atau kegelapan objek tersebut adalah ....",
+        options: ["Warna", "Tekstur", "Rona", "Bayangan", "Situs"],
+        answer: 2,
+        explanation: "Rona (tone) adalah tingkat kegelapan atau kecerahan relatif suatu objek pada citra (terutama pada citra pankromatik hitam-putih)."
+      },
+      {
+        no: 25,
+        topic: "Penginderaan Jauh",
+        question: "Pada hasil interpretasi foto udara pankromatik, perkebunan kelapa sawit dapat dikenali dengan mudah melalui kenampakan tajuk daun yang berbentuk menyerupai bintang serta jarak tanam yang teratur dan seragam. Unsur interpretasi citra yang digunakan untuk mengenali objek tersebut adalah ....",
+        options: ["Rona dan tekstur", "Bentuk dan pola", "Ukuran dan bayangan", "Situs dan asosiasi", "Warna dan situs"],
+        answer: 1,
+        explanation: "Tajuk berbentuk bintang menunjukkan unsur bentuk, sedangkan jarak tanam yang teratur dan seragam menunjukkan unsur pola."
+      },
+      {
+        no: 26,
+        topic: "Penginderaan Jauh",
+        question: "Sebuah objek pada citra satelit resolusi tinggi dikenali sebagai lapangan sepak bola karena berbentuk persegi panjang dengan garis tengah lapangan serta terdapat kenampakan dua buah gawang di kedua ujungnya. Unsur interpretasi yang dominan digunakan adalah ....",
+        options: ["Tekstur dan rona", "Bentuk dan asosiasi", "Pola dan bayangan", "Situs dan tekstur", "Ukuran dan warna"],
+        answer: 1,
+        explanation: "Persegi panjang adalah unsur bentuk, sedangkan keterkaitan lapangan dengan keberadaan gawang di kedua ujungnya merupakan unsur asosiasi."
+      },
+      {
+        no: 27,
+        topic: "Penginderaan Jauh",
+        question: "Permukiman penduduk di wilayah dataran aluvial sering kali dikenali pada citra karena letaknya yang berada di sepanjang tanggul alam sungai (natural levee) atau pematang pantai (beach ridge) untuk menghindari banjir. Pengenalan objek berdasarkan letaknya terhadap bentang alam di sekitarnya merupakan unsur ....",
+        options: ["Asosiasi", "Situs", "Pola", "Ukuran", "Tekstur"],
+        answer: 1,
+        explanation: "Situs adalah letak atau kedudukan suatu objek terhadap objek lain atau bentang alam di sekitarnya (misalnya permukiman di pematang pantai)."
+      },
+      {
+        no: 28,
+        topic: "Sistem Informasi Geografis (SIG)",
+        question: "Suatu sistem informasi berbasis komputer yang dirancang khusus untuk memasukkan, menyimpan, memanggil kembali, mengelola, menganalisis, dan menyajikan data yang bereferensi geografis (keruangan) disebut ....",
+        options: ["Penginderaan Jauh", "Global Positioning System (GPS)", "Sistem Informasi Geografis (SIG)", "Kartografi Digital", "Fotogrametri"],
+        answer: 2,
+        explanation: "Sistem Informasi Geografis (SIG) adalah sistem berbasis komputer untuk mengelola dan menganalisis data bereferensi geografis (spasial dan atribut)."
+      },
+      {
+        no: 29,
+        topic: "Sistem Informasi Geografis (SIG)",
+        question: "Urutan rangkaian empat subsistem utama dalam proses kerja Sistem Informasi Geografis (SIG) dari awal hingga akhir yang paling tepat adalah ....",
+        options: [
+          "Pengelolaan data – masukan data – analisis data – keluaran data",
+          "Masukan data – pengelolaan data – analisis data – keluaran data",
+          "Analisis data – masukan data – keluaran data – pengelolaan data",
+          "Masukan data – analisis data – pengelolaan data – keluaran data",
+          "Keluaran data – pengelolaan data – masukan data – analisis data"
+        ],
+        answer: 1,
+        explanation: "Empat subsistem kerja SIG secara berurutan adalah: (1) Input/Masukan data, (2) Manajemen/Pengelolaan data, (3) Manipulasi & Analisis data, dan (4) Output/Keluaran data."
+      },
+      {
+        no: 30,
+        topic: "Sistem Informasi Geografis (SIG)",
+        question: "Dalam basis data Sistem Informasi Geografis (SIG), terdapat dua jenis data utama. Perbedaan mendasar antara data spasial dan data atribut adalah ....",
+        options: [
+          "Data spasial berupa tabel angka, sedangkan data atribut berupa gambar peta",
+          "Data spasial menunjukkan posisi/lokasi keruangan objek, sedangkan data atribut berisi keterangan deskriptif objek tersebut",
+          "Data spasial berasal dari wawancara, sedangkan data atribut berasal dari satelit",
+          "Data spasial hanya berbentuk titik, sedangkan data atribut berbentuk poligon",
+          "Data spasial tidak memiliki koordinat, sedangkan data atribut memiliki koordinat"
+        ],
+        answer: 1,
+        explanation: "Data spasial merepresentasikan aspek keruangan (koordinat, bentuk, lokasi), sedangkan data atribut menjelaskan karakteristik/informasi deskriptifnya (tabel, nama, jumlah)."
+      },
+      {
+        no: 31,
+        topic: "Sistem Informasi Geografis (SIG)",
+        question: "Model data spasial dalam SIG yang menampilkan fenomena permukaan bumi menggunakan koordinat dalam bentuk titik (point) untuk lokasi sekolah, garis (line) untuk jaringan sungai, dan area (polygon) untuk batas administrasi kecamatan disebut model data ....",
+        options: ["Data raster", "Data piksel", "Data vektor", "Data tabular", "Data analog"],
+        answer: 2,
+        explanation: "Model data vektor merepresentasikan fitur geografis menggunakan elemen geometri berupa titik (point), garis (line), dan area/poligon (polygon)."
+      },
+      {
+        no: 32,
+        topic: "Sistem Informasi Geografis (SIG)",
+        question: "Proses pemasukan data spasial dari peta analog cetak (kertas) ke dalam format digital komputer dengan cara menelusuri garis-garis peta menggunakan kursor pada meja digitizer atau layar monitor disebut ....",
+        options: ["Buffering", "Overlay", "Digitasi peta (digitizing)", "Scanning", "Scoring"],
+        answer: 2,
+        explanation: "Digitasi (digitizing) adalah proses konversi fitur geografis dari peta analog/citra menjadi format data vektor digital dengan menelusuri objek."
+      },
+      {
+        no: 33,
+        topic: "Sistem Informasi Geografis (SIG)",
+        question: "Perangkat keras (hardware) masukan dalam sistem SIG yang berfungsi untuk memindai dan mengubah peta cetak kertas menjadi file gambar digital secara otomatis adalah ....",
+        options: ["Plotter", "Printer", "Scanner", "CPU", "VDU (Monitor)"],
+        answer: 2,
+        explanation: "Scanner adalah perangkat keras input yang memindai peta kertas/dokumen menjadi data raster digital secara otomatis."
+      },
+      {
+        no: 34,
+        topic: "Sistem Informasi Geografis (SIG)",
+        question: "Aplikasi transportasi daring memanfaatkan fitur analisis jaringan (network analysis) dalam Sistem Informasi Geografis (SIG) untuk membantu pengemudi. Fungsi utama fitur analisis tersebut adalah ....",
+        options: [
+          "Menghitung luas lahan pertanian di sekitar jalan",
+          "Mencari rute tercepat dan menghindari kemacetan menuju lokasi tujuan penumpang",
+          "Memprediksi curah hujan di wilayah perkotaan",
+          "Menentukan batas hak milik tanah warga",
+          "Menganalisis jenis batuan penyusun jalan raya"
+        ],
+        answer: 1,
+        explanation: "Analisis jaringan (network analysis) pada SIG digunakan untuk menentukan jalur/rute terpendek, tercepat, maupun manajemen lalu lintas."
+      },
+      {
+        no: 35,
+        topic: "Sistem Informasi Geografis (SIG)",
+        question: "Jika dibandingkan dengan pemetaan manual konvensional di atas kertas, keunggulan utama penggunaan Sistem Informasi Geografis (SIG) dalam pengelolaan data wilayah adalah ....",
+        options: [
+          "Tidak memerlukan tenaga ahli untuk mengoperasikannya",
+          "Biaya pengadaan perangkat kerasnya selalu gratis",
+          "Kecepatan dalam pembaruan (updating) data serta kemudahan analisis tumpang susun (overlay) berbagai data spasial",
+          "Data yang dihasilkan bersifat permanen dan tidak bisa diubah",
+          "Hanya mampu menampilkan satu jenis informasi dalam satu waktu"
+        ],
+        answer: 2,
+        explanation: "Keunggulan utama SIG dibanding pemetaan manual adalah efisiensi penyimpanan, kecepatan pembaruan data, serta kemampuan analisis keruangan seperti overlay dan buffering."
+      },
+      {
+        no: 36,
+        topic: "Sistem Informasi Geografis (SIG)",
+        question: "Ketika terjadi peningkatan kasus demam berdarah (DBD) di suatu kabupaten, Dinas Kesehatan memanfaatkan SIG untuk memetakan pola sebaran kasus penderita serta jangkauan jarak menuju puskesmas terdekat. Pemanfaatan SIG pada kasus tersebut termasuk dalam bidang ....",
+        options: ["Mitigasi bencana geologi", "Perencanaan tata ruang kota", "Kesehatan masyarakat", "Inventarisasi sumber daya alam", "Pengawasan daerah aliran sungai"],
+        answer: 2,
+        explanation: "Pemetaan sebaran penyakit menular dan analisis keterjangkauan fasilitas layanan kesehatan (puskesmas/rumah sakit) merupakan pemanfaatan SIG di bidang kesehatan masyarakat."
+      },
+      {
+        no: 37,
+        topic: "Penginderaan Jauh",
+        question: "Perhatikan bagan skema sistem penginderaan jauh berikut ini! Komponen yang menunjukkan <strong>objek di permukaan bumi</strong> yang memantulkan energi ditunjukkan oleh nomor ....",
+        illustration: `
+          <svg viewBox="0 0 640 230" class="w-full max-w-md max-h-32 h-auto" xmlns="http://www.w3.org/2000/svg">
+            <rect width="640" height="230" rx="12" fill="#f8fafc"/>
+            <circle cx="85" cy="55" r="28" fill="#facc15" stroke="#eab308" stroke-width="3"/>
+            <text x="85" y="60" text-anchor="middle" font-size="14" font-weight="bold" fill="#713f12">1</text>
+            <text x="85" y="100" text-anchor="middle" font-size="11" font-weight="600" fill="#475569">Sumber Energi</text>
+            <ellipse cx="220" cy="110" rx="58" ry="26" fill="#bae6fd" stroke="#0284c7" stroke-width="2" stroke-dasharray="4 2"/>
+            <text x="220" y="115" text-anchor="middle" font-size="14" font-weight="bold" fill="#0369a1">2</text>
+            <text x="220" y="150" text-anchor="middle" font-size="11" font-weight="600" fill="#475569">Media Perantara</text>
+            <path d="M 160 205 Q 230 170 300 195 T 440 205 L 440 220 L 160 220 Z" fill="#16a34a"/>
+            <polygon points="275,188 290,162 305,188" fill="#15803d"/>
+            <rect x="325" y="172" width="24" height="20" fill="#ea580c"/>
+            <circle cx="312" cy="195" r="13" fill="#ffffff" stroke="#15803d" stroke-width="2"/>
+            <text x="312" y="200" text-anchor="middle" font-size="13" font-weight="bold" fill="#14532d">3</text>
+            <rect x="375" y="38" width="54" height="28" rx="6" fill="#334155"/>
+            <rect x="345" y="45" width="28" height="14" fill="#38bdf8"/>
+            <rect x="431" y="45" width="28" height="14" fill="#38bdf8"/>
+            <circle cx="402" cy="72" r="10" fill="#f43f5e"/>
+            <text x="402" y="57" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">4</text>
+            <text x="402" y="25" text-anchor="middle" font-size="11" font-weight="600" fill="#475569">Alat Perekam</text>
+            <rect x="515" y="145" width="85" height="45" rx="8" fill="#0f766e"/>
+            <text x="557" y="172" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">5</text>
+            <text x="557" y="206" text-anchor="middle" font-size="11" font-weight="600" fill="#475569">Pengguna Data</text>
+            <line x1="112" y1="68" x2="175" y2="95" stroke="#eab308" stroke-width="2.5"/>
+            <line x1="255" y1="130" x2="295" y2="165" stroke="#eab308" stroke-width="2.5"/>
+            <line x1="330" y1="168" x2="395" y2="85" stroke="#f43f5e" stroke-width="2.5" stroke-dasharray="5 3"/>
+            <line x1="435" y1="65" x2="535" y2="140" stroke="#0f766e" stroke-width="2.5"/>
+          </svg>
+        `,
+        options: ["Nomor 1", "Nomor 2", "Nomor 3", "Nomor 4", "Nomor 5"],
+        answer: 2,
+        explanation: "Berdasarkan bagan: (1) Sumber energi/matahari, (2) Atmosfer, (3) Objek di permukaan bumi (vegetasi & bangunan), (4) Wahana & Sensor, dan (5) Stasiun penerima/pengguna data."
+      },
+      {
+        no: 38,
+        topic: "Penginderaan Jauh",
+        question: "Perhatikan kembali bagan skema sistem penginderaan jauh berikut ini! Komponen yang berfungsi sebagai <strong>sensor perekam</strong> pantulan gelombang elektromagnetik pada wahana ditunjukkan oleh nomor ....",
+        illustration: `
+          <svg viewBox="0 0 640 230" class="w-full max-w-md max-h-32 h-auto" xmlns="http://www.w3.org/2000/svg">
+            <rect width="640" height="230" rx="12" fill="#f8fafc"/>
+            <circle cx="85" cy="55" r="28" fill="#facc15" stroke="#eab308" stroke-width="3"/>
+            <text x="85" y="60" text-anchor="middle" font-size="14" font-weight="bold" fill="#713f12">1</text>
+            <text x="85" y="100" text-anchor="middle" font-size="11" font-weight="600" fill="#475569">Sumber Energi</text>
+            <ellipse cx="220" cy="110" rx="58" ry="26" fill="#bae6fd" stroke="#0284c7" stroke-width="2" stroke-dasharray="4 2"/>
+            <text x="220" y="115" text-anchor="middle" font-size="14" font-weight="bold" fill="#0369a1">2</text>
+            <text x="220" y="150" text-anchor="middle" font-size="11" font-weight="600" fill="#475569">Media Perantara</text>
+            <path d="M 160 205 Q 230 170 300 195 T 440 205 L 440 220 L 160 220 Z" fill="#16a34a"/>
+            <polygon points="275,188 290,162 305,188" fill="#15803d"/>
+            <rect x="325" y="172" width="24" height="20" fill="#ea580c"/>
+            <circle cx="312" cy="195" r="13" fill="#ffffff" stroke="#15803d" stroke-width="2"/>
+            <text x="312" y="200" text-anchor="middle" font-size="13" font-weight="bold" fill="#14532d">3</text>
+            <rect x="375" y="38" width="54" height="28" rx="6" fill="#334155"/>
+            <rect x="345" y="45" width="28" height="14" fill="#38bdf8"/>
+            <rect x="431" y="45" width="28" height="14" fill="#38bdf8"/>
+            <circle cx="402" cy="72" r="10" fill="#f43f5e"/>
+            <text x="402" y="57" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">4</text>
+            <text x="402" y="25" text-anchor="middle" font-size="11" font-weight="600" fill="#475569">Alat Perekam</text>
+            <rect x="515" y="145" width="85" height="45" rx="8" fill="#0f766e"/>
+            <text x="557" y="172" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">5</text>
+            <text x="557" y="206" text-anchor="middle" font-size="11" font-weight="600" fill="#475569">Pengguna Data</text>
+            <line x1="112" y1="68" x2="175" y2="95" stroke="#eab308" stroke-width="2.5"/>
+            <line x1="255" y1="130" x2="295" y2="165" stroke="#eab308" stroke-width="2.5"/>
+            <line x1="330" y1="168" x2="395" y2="85" stroke="#f43f5e" stroke-width="2.5" stroke-dasharray="5 3"/>
+            <line x1="435" y1="65" x2="535" y2="140" stroke="#0f766e" stroke-width="2.5"/>
+          </svg>
+        `,
+        options: ["Nomor 1", "Nomor 2", "Nomor 3", "Nomor 4", "Nomor 5"],
+        answer: 3,
+        explanation: "Nomor 4 menunjukkan komponen wahana satelit beserta sensor perekam yang menangkap pantulan gelombang elektromagnetik dari objek."
+      },
+      {
+        no: 39,
+        topic: "Pengetahuan Dasar Pemetaan",
+        question: "Perhatikan ilustrasi tiga jenis bidang proyeksi peta berikut! Apabila seorang kartografer hendak memetakan wilayah <strong>Benua Antartika di sekitar Kutub Selatan</strong>, bidang proyeksi yang paling minim distorsi beserta alasan yang tepat adalah ....",
+        illustration: `
+          <svg viewBox="0 0 620 180" class="w-full max-w-md max-h-28 h-auto" xmlns="http://www.w3.org/2000/svg">
+            <rect width="620" height="180" rx="12" fill="#f8fafc"/>
+            <g transform="translate(105, 85)">
+              <rect x="-42" y="-52" width="84" height="104" fill="none" stroke="#0284c7" stroke-width="2" stroke-dasharray="4 2"/>
+              <circle cx="0" cy="0" r="36" fill="#bae6fd" stroke="#0369a1" stroke-width="2"/>
+              <ellipse cx="0" cy="0" rx="36" ry="10" fill="none" stroke="#0369a1" stroke-width="1.5"/>
+              <text x="0" y="72" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e293b">A. Proyeksi Silinder</text>
+            </g>
+            <g transform="translate(310, 85)">
+              <polygon points="0,-62 -52,32 52,32" fill="none" stroke="#0d9488" stroke-width="2" stroke-dasharray="4 2"/>
+              <circle cx="0" cy="6" r="34" fill="#99f6e4" stroke="#0f766e" stroke-width="2"/>
+              <path d="M -29 -11 Q 0 2 29 -11" fill="none" stroke="#0f766e" stroke-width="1.5"/>
+              <text x="0" y="72" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e293b">B. Proyeksi Kerucut</text>
+            </g>
+            <g transform="translate(515, 85)">
+              <line x1="-55" y1="-42" x2="55" y2="-42" stroke="#d97706" stroke-width="3"/>
+              <circle cx="0" cy="-4" r="38" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+              <circle cx="0" cy="-42" r="4" fill="#dc2626"/>
+              <text x="0" y="72" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e293b">C. Proyeksi Bidang Datar</text>
+            </g>
+          </svg>
+        `,
+        options: [
+          "Proyeksi silinder, karena bidang proyeksi menyinggung garis khatulistiwa secara merata",
+          "Proyeksi kerucut, karena paling cocok untuk wilayah lintang sedang",
+          "Proyeksi bidang datar (azimutal polar), karena bidang proyeksi bersinggungan langsung dengan titik kutub",
+          "Proyeksi silinder transversal, karena meminimalkan distorsi di daerah tropis",
+          "Proyeksi kerucut normal, karena garis paralelnya melingkar di ekuator"
+        ],
+        answer: 2,
+        explanation: "Proyeksi bidang datar (azimutal/zenital) posisi polar menempatkan bidang datar menyinggung langsung titik kutub bumi sehingga wilayah kutub seperti Antartika memiliki distorsi paling kecil."
+      },
+      {
+        no: 40,
+        topic: "Pengetahuan Dasar Pemetaan",
+        question: "Jarak antara Kota X ke Kota Y pada sebuah peta jalan terukur sebesar 10 cm. Jika jarak sebenarnya di lapangan antara kedua kota tersebut adalah 50 km, maka skala peta tersebut adalah ....",
+        options: ["1 : 5.000", "1 : 50.000", "1 : 500.000", "1 : 2.500.000", "1 : 5.000.000"],
+        answer: 2,
+        explanation: "Skala = Jarak Peta : Jarak Sebenarnya = 10 cm : 50 km = 10 cm : 5.000.000 cm = 1 : 500.000."
+      }
+    ];
+
+    // PAKET SOAL B (40 Soal Variasi dengan Kisi-Kisi & Level Kognitif yang Sama)
+    const questionsPackageB = [
+      {
+        no: 1,
+        topic: "Pengetahuan Dasar Geografi",
+        question: "Istilah geografi pertama kali dicetuskan oleh ilmuwan Yunani Kuno yang menghitung keliling bumi secara matematis dan menulis risalah berjudul <em>Geographica</em>. Ilmuwan yang dimaksud adalah ....",
+        options: ["Anaximander", "Eratosthenes", "Aristoteles", "Ptolomaeus", "Thales"],
+        answer: 1,
+        explanation: "Eratosthenes merupakan peletak dasar istilah geographica (geo = bumi, graphein = tulisan/gambaran) pada abad ke-3 SM."
+      },
+      {
+        no: 2,
+        topic: "Pengetahuan Dasar Geografi",
+        question: "Fenomena lapisan udara, batuan pembentuk kerak bumi, perairan darat maupun laut, flora-fauna, serta dinamika kehidupan manusia di permukaan bumi merupakan ruang lingkup kajian geografi yang disebut ....",
+        options: ["Objek formal", "Metode keruangan", "Objek material", "Prinsip distribusi", "Konsep lokasi"],
+        answer: 2,
+        explanation: "Kelima lapisan geosfer (atmosfer, litosfer, hidrosfer, biosfer, antroposfer) adalah objek material geografi."
+      },
+      {
+        no: 3,
+        topic: "Pengetahuan Dasar Geografi",
+        question: "Permukiman penduduk di wilayah transmigrasi dataran rendah umumnya tersusun berderet mengikuti jaringan jalan raya, sedangkan di daerah perbukitan kapur rumah penduduk tersebar mengelompok di sekitar lembah subur. Konsep geografi yang sesuai dengan gejala tersebut adalah ....",
+        options: ["Konsep pola", "Konsep aglomerasi", "Konsep morfologi", "Konsep jarak", "Konsep lokasi"],
+        answer: 0,
+        explanation: "Susunan keruangan permukiman (memanjang, mengelompok, atau menyebar) dikaji melalui konsep pola."
+      },
+      {
+        no: 4,
+        topic: "Pengetahuan Dasar Geografi",
+        question: "Sebidang tanah yang terletak tepat di persimpangan jalan tol dan dekat kawasan industri memiliki nilai jual jauh lebih tinggi daripada tanah di kawasan terpencil yang sulit dijangkau. Hal ini menunjukkan pengaruh ....",
+        options: ["Lokasi astronomis", "Lokasi relatif", "Jarak mutlak", "Morfologi lahan", "Diferensiasi area"],
+        answer: 1,
+        explanation: "Lokasi relatif menggambarkan posisi strategis suatu tempat ditinjau dari aksesibilitas dan fasilitas di sekitarnya."
+      },
+      {
+        no: 5,
+        topic: "Pengetahuan Dasar Geografi",
+        question: "Keterbatasan lahan pertanian dan rendahnya pendapatan di desa mendorong penduduk bermigrasi ke kota, yang kemudian memicu kepadatan penduduk serta tumbuhnya permukiman liar di bantaran rel kereta api. Prinsip geografi yang menjelaskan keterkaitan fenomena tersebut adalah ....",
+        options: ["Prinsip korologi", "Prinsip deskripsi", "Prinsip distribusi", "Prinsip interelasi", "Prinsip kronologi"],
+        answer: 3,
+        explanation: "Prinsip interelasi mengkaji hubungan sebab-akibat atau keterkaitan antarfenomena geosfer dalam suatu ruang."
+      },
+      {
+        no: 6,
+        topic: "Pengetahuan Dasar Geografi",
+        question: "Untuk meneliti kerawanan longsor di Kabupaten Bogor, seorang geograf memetakan sebaran titik longsor, menganalisis hubungan curah hujan dengan kemiringan lereng, lalu menyajikan hasilnya dalam bentuk peta tematik dan tabel statistik. Prinsip geografi yang digunakan adalah ....",
+        options: ["Prinsip distribusi", "Prinsip interelasi", "Prinsip deskripsi", "Prinsip korologi", "Prinsip ekologi"],
+        answer: 3,
+        explanation: "Prinsip korologi memadukan analisis persebaran, interelasi, dan deskripsi fenomena geosfer secara terpadu."
+      },
+      {
+        no: 7,
+        topic: "Pengetahuan Dasar Geografi",
+        question: "Alih fungsi kawasan hutan lindung di daerah hulu Sungai Ciliwung menjadi vila dan lahan pertanian sayur menyebabkan meningkatnya limpasan air permukaan sehingga memicu banjir bandang di wilayah hilir. Pendekatan geografi yang tepat untuk menganalisis masalah ini adalah ....",
+        options: ["Pendekatan keruangan", "Pendekatan kelingkungan", "Pendekatan kompleks wilayah", "Pendekatan regional", "Pendekatan spasial"],
+        answer: 1,
+        explanation: "Pendekatan kelingkungan (ekologi) menelaah dampak timbal balik aktivitas manusia terhadap kelestarian lingkungan fisiknya."
+      },
+      {
+        no: 8,
+        topic: "Pengetahuan Dasar Geografi",
+        question: "Perhatikan kejadian alam berikut:\n(1) Aktivitas magma dan letusan gunung berapi\n(2) Pergeseran lempeng tektonik yang memicu gempa\n(3) Pelapukan mekanik batuan di gurun\n(4) Sirkulasi arus laut Samudra Pasifik\n\nDalam ilmu geografi, seluruh fenomena tersebut termasuk kajian ....",
+        options: ["Aspek sosial", "Aspek budaya", "Aspek politik", "Aspek fisik", "Aspek kependudukan"],
+        answer: 3,
+        explanation: "Proses tektonisme, vulkanisme, pelapukan batuan, dan arus laut adalah gejala alamiah yang masuk ke dalam aspek fisik geografi."
+      },
+      {
+        no: 9,
+        topic: "Pengetahuan Dasar Geografi",
+        question: "Bagi petani lokal di kawasan pegunungan Berastagi, tanah vulkanik yang subur dimanfaatkan untuk budidaya jeruk dan sayuran, sedangkan bagi wisatawan perkotaan wilayah yang sama dimanfaatkan sebagai tempat rekreasi udara sejuk. Fenomena ini mencerminkan konsep ....",
+        options: ["Konsep aglomerasi", "Konsep nilai kegunaan", "Konsep keterjangkauan", "Konsep morfologi", "Konsep pola"],
+        answer: 1,
+        explanation: "Konsep nilai kegunaan menjelaskan bahwa nilai manfaat suatu wilayah berbeda-beda bergantung pada kebutuhan penggunanya."
+      },
+      {
+        no: 10,
+        topic: "Pengetahuan Dasar Geografi",
+        question: "Dalam merencanakan pembangunan gerai ritel modern di Kota Bandung, tim analis hanya mengkaji struktur kemiringan lereng, lebar jaringan jalan arteri, dan ketersediaan lahan kosong tanpa meneliti aspek sosial-budaya warga sekitar. Pendekatan yang dipakai adalah ....",
+        options: ["Pendekatan kelingkungan", "Pendekatan keruangan", "Pendekatan kompleks wilayah", "Pendekatan ekologi", "Pendekatan antropologis"],
+        answer: 1,
+        explanation: "Pendekatan keruangan menganalisis variasi dan karakteristik struktur fisik ruang (lokasi, jaringan jalan, topografi) secara langsung."
+      },
+      {
+        no: 11,
+        topic: "Pengetahuan Dasar Pemetaan",
+        question: "Representasi konvensional sebagian atau seluruh permukaan bumi pada bidang datar yang diperkecil dengan skala tertentu dan dilengkapi simbol serta keterangan tulisan disebut ....",
+        options: ["Peta", "Globe", "Citra foto", "Peta timbul", "Sketsa wilayah"],
+        answer: 0,
+        explanation: "Peta adalah gambaran permukaan bumi pada bidang datar yang diperkecil menggunakan skala dan dilengkapi simbol."
+      },
+      {
+        no: 12,
+        topic: "Pengetahuan Dasar Pemetaan",
+        question: "Komponen kelengkapan peta yang berisi daftar keterangan arti berbagai simbol titik, garis, warna, maupun area yang tergambar pada muka peta disebut ....",
+        options: ["Judul peta", "Skala peta", "Legenda", "Garis astronomis", "Orientasi"],
+        answer: 2,
+        explanation: "Legenda berfungsi menjelaskan arti setiap simbol yang digunakan di dalam peta agar pengguna dapat menafsirkannya dengan benar."
+      },
+      {
+        no: 13,
+        topic: "Pengetahuan Dasar Pemetaan",
+        question: "Peta persebaran kepadatan penduduk, peta curah hujan tahunan, dan peta jalur evakuasi bencana tsunami termasuk ke dalam kelompok peta ....",
+        options: ["Peta korografi", "Peta topografi", "Peta umum", "Peta tematik", "Peta kadaster"],
+        answer: 3,
+        explanation: "Peta yang menyajikan tema atau informasi khusus tertentu (seperti penduduk, curah hujan, atau jalur evakuasi) disebut peta tematik."
+      },
+      {
+        no: 14,
+        topic: "Pengetahuan Dasar Pemetaan",
+        question: "Untuk keperluan pembuatan sertifikat hak milik tanah warga, Badan Pertanahan Nasional menggunakan peta berskala sangat besar antara 1 : 100 hingga 1 : 5.000 yang disebut ....",
+        options: ["Peta geografis", "Peta skala kecil", "Peta skala sedang", "Peta kadaster", "Peta korografi"],
+        answer: 3,
+        explanation: "Peta kadaster memiliki skala 1 : 100 sampai 1 : 5.000 dan digunakan untuk memetakan batas kepemilikan tanah secara rinci."
+      },
+      {
+        no: 15,
+        topic: "Pengetahuan Dasar Pemetaan",
+        question: "Karena wilayah Indonesia membentang di sekitar garis ekuator (khatulistiwa), jenis proyeksi peta yang paling ideal untuk mempertahankan ketepatan bentuk dan sudut wilayah kepulauan Indonesia adalah ....",
+        options: ["Proyeksi azimutal polar", "Proyeksi kerucut normal", "Proyeksi silinder normal konform", "Proyeksi kerucut miring", "Proyeksi zenital ekuatorial"],
+        answer: 2,
+        explanation: "Proyeksi silinder normal menyinggung wilayah khatulistiwa dengan distorsi minimal, dan sifat konform mempertahankan kesesuaian bentuk."
+      },
+      {
+        no: 16,
+        topic: "Pengetahuan Dasar Pemetaan",
+        question: "Sebuah peta memiliki skala 1 : 250.000. Apabila jarak antara Kota P dan Kota Q pada peta terukur sejauh 8 cm, maka jarak sebenarnya kedua kota tersebut di lapangan adalah ....",
+        options: ["2 km", "20 km", "25 km", "200 km", "2.000 km"],
+        answer: 1,
+        explanation: "Jarak sebenarnya = 8 cm × 250.000 = 2.000.000 cm = 20 km."
+      },
+      {
+        no: 17,
+        topic: "Pengetahuan Dasar Pemetaan",
+        question: "Apabila pada peta topografi terlihat garis-garis kontur yang tersusun sangat rapat hingga hampir berimpitan, maka kondisi relief permukaan bumi di bagian tersebut berupa ....",
+        options: ["Dataran aluvial yang datar", "Pantai landai berpasir", "Lereng yang sangat curam atau terjal", "Lembah sungai yang melebar", "Dataran tinggi yang rata"],
+        answer: 2,
+        explanation: "Garis kontur yang sangat rapat menandakan perubahan ketinggian yang drastis pada jarak horizontal yang pendek, yaitu lereng curam/terjal."
+      },
+      {
+        no: 18,
+        topic: "Pengetahuan Dasar Pemetaan",
+        question: "Peta berukuran kecil yang disisipkan di dalam bingkai peta utama untuk memperlihatkan kedudukan wilayah yang dipetakan terhadap wilayah lain yang lebih luas disebut ....",
+        options: ["Legenda peta", "Peta inset", "Garis tepi", "Sumber peta", "Simbol titik"],
+        answer: 1,
+        explanation: "Peta inset berfungsi menunjukkan lokasi daerah yang dipetakan dalam hubungannya dengan wilayah sekitar yang lebih luas."
+      },
+      {
+        no: 19,
+        topic: "Pengetahuan Dasar Pemetaan",
+        question: "Jarak antara titik A dan titik B pada Peta X yang berskala 1 : 200.000 adalah 5 cm. Pada Peta Y yang tidak mencantumkan skala, jarak titik A dan B yang sama terukur sepanjang 10 cm. Skala Peta Y adalah ....",
+        options: ["1 : 50.000", "1 : 100.000", "1 : 250.000", "1 : 400.000", "1 : 1.000.000"],
+        answer: 1,
+        explanation: "P2 = (d1 / d2) × P1 = (5 / 10) × 200.000 = 100.000. Jadi skala Peta Y adalah 1 : 100.000."
+      },
+      {
+        no: 20,
+        topic: "Penginderaan Jauh",
+        question: "Teknik dan ilmu memperoleh informasi tentang objek, daerah, atau gejala di permukaan bumi melalui analisis data yang direkam oleh alat tanpa menyentuh objek secara langsung disebut ....",
+        options: ["Survei geodetik", "Penginderaan jauh", "Pemetaan terestris", "Sistem Informasi Geografis", "Kartografi tematik"],
+        answer: 1,
+        explanation: "Penginderaan jauh (remote sensing) memperoleh informasi objek di permukaan bumi tanpa kontak langsung dengan objek tersebut."
+      },
+      {
+        no: 21,
+        topic: "Penginderaan Jauh",
+        question: "Sumber energi alami utama yang memancarkan gelombang elektromagnetik untuk menyinari objek di permukaan bumi dalam sistem penginderaan jauh pasif adalah ....",
+        options: ["Gelombang mikro radar", "Sinar laser LiDAR", "Sinar matahari", "Gelombang radio", "Sinar inframerah buatan"],
+        answer: 2,
+        explanation: "Sinar matahari adalah sumber tenaga alami yang digunakan pada penginderaan jauh sistem pasif."
+      },
+      {
+        no: 22,
+        topic: "Penginderaan Jauh",
+        question: "Bagian dari spektrum gelombang elektromagnetik yang mampu melewati lapisan atmosfer bumi dengan hambatan serapan maupun hamburan yang sangat kecil disebut ....",
+        options: ["Hamburan atmosfer", "Jendela atmosfer", "Spektrum termal", "Refleksi baur", "Absorpsi ozon"],
+        answer: 1,
+        explanation: "Jendela atmosfer adalah bagian spektrum elektromagnetik yang dapat menembus atmosfer menuju permukaan bumi dengan hambatan minimal."
+      },
+      {
+        no: 23,
+        topic: "Penginderaan Jauh",
+        question: "Komponen penginderaan jauh yang dipasang pada wahana pesawat terbang atau satelit untuk menangkap dan merekam energi pantulan maupun pancaran dari objek di bumi adalah ....",
+        options: ["Wahana", "Atmosfer", "Sensor", "Citra digital", "Stasiun bumi"],
+        answer: 2,
+        explanation: "Sensor adalah alat perekam (kamera atau scanner) yang dipasang pada wahana untuk merekam gelombang elektromagnetik dari objek."
+      },
+      {
+        no: 24,
+        topic: "Penginderaan Jauh",
+        question: "Tingkat kecerahan atau kegelapan relatif suatu objek yang terlihat pada citra foto udara hitam putih (pankromatik) disebut unsur ....",
+        options: ["Rona", "Tekstur", "Bayangan", "Situs", "Asosiasi"],
+        answer: 0,
+        explanation: "Rona menunjukkan tingkat kegelapan atau kecerahan objek pada citra hitam-putih akibat perbedaan daya pantul cahaya."
+      },
+      {
+        no: 25,
+        topic: "Penginderaan Jauh",
+        question: "Tanaman kelapa sawit pada citra foto udara dapat dibedakan dari hutan alami karena memiliki tajuk berbentuk menyerupai bintang serta susunan jarak tanam yang teratur. Unsur interpretasi citra yang digunakan adalah ....",
+        options: ["Ukuran dan bayangan", "Bentuk dan pola", "Rona dan situs", "Tekstur dan asosiasi", "Warna dan ukuran"],
+        answer: 1,
+        explanation: "Tajuk bintang merupakan unsur bentuk, sedangkan jarak tanam yang seragam dan teratur merupakan unsur pola."
+      },
+      {
+        no: 26,
+        topic: "Penginderaan Jauh",
+        question: "Objek lapangan sepak bola pada citra resolusi tinggi dapat dikenali melalui bentuknya yang persegi panjang serta keterkaitannya dengan keberadaan dua gawang di kedua sisi ujung lapangan. Unsur interpretasi yang dipakai adalah ....",
+        options: ["Rona dan tekstur", "Situs dan ukuran", "Bentuk dan asosiasi", "Pola dan bayangan", "Tekstur dan situs"],
+        answer: 2,
+        explanation: "Persegi panjang adalah unsur bentuk, dan keberadaan gawang yang selalu menyertai lapangan sepak bola adalah unsur asosiasi."
+      },
+      {
+        no: 27,
+        topic: "Penginderaan Jauh",
+        question: "Pengenalan permukiman penduduk pada citra berdasarkan kedudukan atau lokasinya yang memanjang di sepanjang tanggul alam sungai atau pematang pantai termasuk unsur interpretasi ....",
+        options: ["Asosiasi", "Pola", "Situs", "Tekstur", "Bayangan"],
+        answer: 2,
+        explanation: "Situs adalah letak atau posisi suatu objek terhadap bentang alam atau objek lain di sekitarnya."
+      },
+      {
+        no: 28,
+        topic: "Sistem Informasi Geografis (SIG)",
+        question: "Sistem berbasis komputer yang digunakan untuk memasukkan, menyimpan, mengelola, menganalisis, dan menampilkan data yang memiliki referensi geografis disebut ....",
+        options: ["Penginderaan Jauh", "Sistem Informasi Geografis (SIG)", "Global Positioning System", "Fotogrametri", "Kartografi"],
+        answer: 1,
+        explanation: "Sistem Informasi Geografis (SIG) merupakan sistem informasi berbasis komputer untuk mengelola dan menganalisis data bereferensi keruangan."
+      },
+      {
+        no: 29,
+        topic: "Sistem Informasi Geografis (SIG)",
+        question: "Rangkaian empat subsistem utama dalam tahapan kerja Sistem Informasi Geografis (SIG) secara berurutan adalah ....",
+        options: [
+          "Masukan data – pengelolaan data – analisis data – keluaran data",
+          "Pengelolaan data – masukan data – keluaran data – analisis data",
+          "Analisis data – pengelolaan data – masukan data – keluaran data",
+          "Masukan data – analisis data – pengelolaan data – keluaran data",
+          "Keluaran data – analisis data – pengelolaan data – masukan data"
+        ],
+        answer: 0,
+        explanation: "Urutan subsistem kerja SIG adalah input (masukan data), manajemen (pengelolaan data), manipulasi & analisis data, serta output (keluaran data)."
+      },
+      {
+        no: 30,
+        topic: "Sistem Informasi Geografis (SIG)",
+        question: "Pernyataan yang paling tepat untuk membedakan data spasial dan data atribut dalam Sistem Informasi Geografis (SIG) adalah ....",
+        options: [
+          "Data spasial berisi tabel statistik penduduk, sedangkan data atribut berupa koordinat lintang-bujur",
+          "Data spasial menunjukkan posisi keruangan/lokasi objek, sedangkan data atribut memuat keterangan deskriptif objek tersebut",
+          "Data spasial hanya diperoleh dari sensus, sedangkan data atribut dari foto udara",
+          "Data spasial tidak memiliki referensi koordinat, sedangkan data atribut memiliki koordinat",
+          "Data spasial berbentuk teks narasi, sedangkan data atribut berbentuk garis kontur"
+        ],
+        answer: 1,
+        explanation: "Data spasial merepresentasikan lokasi/geometri objek di bumi, sedangkan data atribut menjelaskan identitas atau karakteristik deskriptifnya."
+      },
+      {
+        no: 31,
+        topic: "Sistem Informasi Geografis (SIG)",
+        question: "Model data spasial SIG yang merepresentasikan fenomena permukaan bumi dalam bentuk titik (point), garis (line), dan area (polygon) disebut ....",
+        options: ["Data raster", "Data vektor", "Data sel grid", "Data piksel", "Data matriks"],
+        answer: 1,
+        explanation: "Data vektor menampilkan objek geografis menggunakan koordinat titik (point), garis (line), dan poligon (polygon)."
+      },
+      {
+        no: 32,
+        topic: "Sistem Informasi Geografis (SIG)",
+        question: "Kegiatan mengonversi data spasial dari peta analog cetak menjadi format vektor digital dengan menelusuri garis-garis peta menggunakan kursor pada layar komputer disebut ....",
+        options: ["Scanning", "Overlay", "Buffering", "Digitasi peta (digitizing)", "Interpolasi"],
+        answer: 3,
+        explanation: "Digitasi (digitizing) adalah proses menelusuri fitur peta analog/citra menjadi data vektor digital."
+      },
+      {
+        no: 33,
+        topic: "Sistem Informasi Geografis (SIG)",
+        question: "Perangkat keras (hardware) masukan pada SIG yang digunakan untuk memindai peta kertas menjadi file gambar digital secara otomatis adalah ....",
+        options: ["Plotter", "Scanner", "Printer laser", "Monitor", "Flashdisk"],
+        answer: 1,
+        explanation: "Scanner berfungsi memindai dokumen atau peta analog cetak menjadi data gambar raster digital secara otomatis."
+      },
+      {
+        no: 34,
+        topic: "Sistem Informasi Geografis (SIG)",
+        question: "Pada aplikasi transportasi daring, fitur analisis jaringan (network analysis) dalam SIG dimanfaatkan pengemudi untuk ....",
+        options: [
+          "Menghitung luas kawasan hutan lindung",
+          "Menentukan rute tercepat dan menghindari kemacetan menuju titik tujuan",
+          "Memetakan sebaran jenis tanah di perkotaan",
+          "Mengukur kedalaman palung laut",
+          "Menentukan batas administrasi kelurahan"
+        ],
+        answer: 1,
+        explanation: "Network analysis pada SIG digunakan untuk pemodelan transportasi seperti pencarian rute terpendek dan tercepat."
+      },
+      {
+        no: 35,
+        topic: "Sistem Informasi Geografis (SIG)",
+        question: "Keunggulan utama Sistem Informasi Geografis (SIG) dibandingkan metode pemetaan manual konvensional dalam pengelolaan data wilayah adalah ....",
+        options: [
+          "Tidak membutuhkan perangkat komputer maupun perangkat lunak",
+          "Data peta tidak dapat diperbarui setelah dicetak",
+          "Kemudahan pembaruan (updating) data secara cepat dan kemampuan analisis tumpang susun (overlay) berbagai peta",
+          "Hanya mampu menyimpan data dalam jumlah sangat terbatas",
+          "Tidak memerlukan data koordinat geografis"
+        ],
+        answer: 2,
+        explanation: "SIG unggul karena pembaruan data sangat cepat serta mampu melakukan analisis spasial kompleks seperti tumpang susun (overlay) beberapa layer peta."
+      },
+      {
+        no: 36,
+        topic: "Sistem Informasi Geografis (SIG)",
+        question: "Dinas Kesehatan memanfaatkan SIG untuk memetakan pola persebaran kasus wabah penyakit menular serta menganalisis jangkauan pelayanan puskesmas di tiap kecamatan. Hal ini merupakan pemanfaatan SIG di bidang ....",
+        options: ["Kehutanan", "Kesehatan masyarakat", "Pertambangan", "Kelautan", "Telekomunikasi"],
+        answer: 1,
+        explanation: "Pemetaan sebaran wabah penyakit dan keterjangkauan fasilitas medis merupakan aplikasi SIG pada bidang kesehatan masyarakat."
+      },
+      {
+        no: 37,
+        topic: "Penginderaan Jauh",
+        question: "Perhatikan bagan sistem penginderaan jauh berikut! Komponen yang menunjukkan <strong>objek di permukaan bumi</strong> yang memantulkan energi ditunjukkan oleh nomor ....",
+        illustration: `
+          <svg viewBox="0 0 640 230" class="w-full max-w-md max-h-32 h-auto" xmlns="http://www.w3.org/2000/svg">
+            <rect width="640" height="230" rx="12" fill="#f8fafc"/>
+            <circle cx="85" cy="55" r="28" fill="#facc15" stroke="#eab308" stroke-width="3"/>
+            <text x="85" y="60" text-anchor="middle" font-size="14" font-weight="bold" fill="#713f12">1</text>
+            <text x="85" y="100" text-anchor="middle" font-size="11" font-weight="600" fill="#475569">Matahari</text>
+            <ellipse cx="220" cy="110" rx="58" ry="26" fill="#bae6fd" stroke="#0284c7" stroke-width="2" stroke-dasharray="4 2"/>
+            <text x="220" y="115" text-anchor="middle" font-size="14" font-weight="bold" fill="#0369a1">2</text>
+            <text x="220" y="150" text-anchor="middle" font-size="11" font-weight="600" fill="#475569">Atmosfer</text>
+            <path d="M 160 205 Q 230 170 300 195 T 440 205 L 440 220 L 160 220 Z" fill="#16a34a"/>
+            <polygon points="275,188 290,162 305,188" fill="#15803d"/>
+            <rect x="325" y="172" width="24" height="20" fill="#ea580c"/>
+            <circle cx="312" cy="195" r="13" fill="#ffffff" stroke="#15803d" stroke-width="2"/>
+            <text x="312" y="200" text-anchor="middle" font-size="13" font-weight="bold" fill="#14532d">3</text>
+            <rect x="375" y="38" width="54" height="28" rx="6" fill="#334155"/>
+            <rect x="345" y="45" width="28" height="14" fill="#38bdf8"/>
+            <rect x="431" y="45" width="28" height="14" fill="#38bdf8"/>
+            <circle cx="402" cy="72" r="10" fill="#f43f5e"/>
+            <text x="402" y="57" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">4</text>
+            <text x="402" y="25" text-anchor="middle" font-size="11" font-weight="600" fill="#475569">Wahana & Sensor</text>
+            <rect x="515" y="145" width="85" height="45" rx="8" fill="#0f766e"/>
+            <text x="557" y="172" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">5</text>
+            <text x="557" y="206" text-anchor="middle" font-size="11" font-weight="600" fill="#475569">Pengguna Data</text>
+            <line x1="112" y1="68" x2="175" y2="95" stroke="#eab308" stroke-width="2.5"/>
+            <line x1="255" y1="130" x2="295" y2="165" stroke="#eab308" stroke-width="2.5"/>
+            <line x1="330" y1="168" x2="395" y2="85" stroke="#f43f5e" stroke-width="2.5" stroke-dasharray="5 3"/>
+            <line x1="435" y1="65" x2="535" y2="140" stroke="#0f766e" stroke-width="2.5"/>
+          </svg>
+        `,
+        options: ["Nomor 1", "Nomor 2", "Nomor 3", "Nomor 4", "Nomor 5"],
+        answer: 2,
+        explanation: "Nomor 3 pada bagan menunjukkan objek di permukaan bumi (pepohonan dan bangunan) yang memantulkan energi ke sensor."
+      },
+      {
+        no: 38,
+        topic: "Penginderaan Jauh",
+        question: "Perhatikan bagan sistem penginderaan jauh berikut! Komponen yang menunjukkan <strong>sensor perekam</strong> yang terpasang pada wahana satelit ditunjukkan oleh nomor ....",
+        illustration: `
+          <svg viewBox="0 0 640 230" class="w-full max-w-md max-h-32 h-auto" xmlns="http://www.w3.org/2000/svg">
+            <rect width="640" height="230" rx="12" fill="#f8fafc"/>
+            <circle cx="85" cy="55" r="28" fill="#facc15" stroke="#eab308" stroke-width="3"/>
+            <text x="85" y="60" text-anchor="middle" font-size="14" font-weight="bold" fill="#713f12">1</text>
+            <text x="85" y="100" text-anchor="middle" font-size="11" font-weight="600" fill="#475569">Matahari</text>
+            <ellipse cx="220" cy="110" rx="58" ry="26" fill="#bae6fd" stroke="#0284c7" stroke-width="2" stroke-dasharray="4 2"/>
+            <text x="220" y="115" text-anchor="middle" font-size="14" font-weight="bold" fill="#0369a1">2</text>
+            <text x="220" y="150" text-anchor="middle" font-size="11" font-weight="600" fill="#475569">Atmosfer</text>
+            <path d="M 160 205 Q 230 170 300 195 T 440 205 L 440 220 L 160 220 Z" fill="#16a34a"/>
+            <polygon points="275,188 290,162 305,188" fill="#15803d"/>
+            <rect x="325" y="172" width="24" height="20" fill="#ea580c"/>
+            <circle cx="312" cy="195" r="13" fill="#ffffff" stroke="#15803d" stroke-width="2"/>
+            <text x="312" y="200" text-anchor="middle" font-size="13" font-weight="bold" fill="#14532d">3</text>
+            <rect x="375" y="38" width="54" height="28" rx="6" fill="#334155"/>
+            <rect x="345" y="45" width="28" height="14" fill="#38bdf8"/>
+            <rect x="431" y="45" width="28" height="14" fill="#38bdf8"/>
+            <circle cx="402" cy="72" r="10" fill="#f43f5e"/>
+            <text x="402" y="57" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">4</text>
+            <text x="402" y="25" text-anchor="middle" font-size="11" font-weight="600" fill="#475569">Wahana & Sensor</text>
+            <rect x="515" y="145" width="85" height="45" rx="8" fill="#0f766e"/>
+            <text x="557" y="172" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">5</text>
+            <text x="557" y="206" text-anchor="middle" font-size="11" font-weight="600" fill="#475569">Pengguna Data</text>
+            <line x1="112" y1="68" x2="175" y2="95" stroke="#eab308" stroke-width="2.5"/>
+            <line x1="255" y1="130" x2="295" y2="165" stroke="#eab308" stroke-width="2.5"/>
+            <line x1="330" y1="168" x2="395" y2="85" stroke="#f43f5e" stroke-width="2.5" stroke-dasharray="5 3"/>
+            <line x1="435" y1="65" x2="535" y2="140" stroke="#0f766e" stroke-width="2.5"/>
+          </svg>
+        `,
+        options: ["Nomor 1", "Nomor 2", "Nomor 3", "Nomor 4", "Nomor 5"],
+        answer: 3,
+        explanation: "Nomor 4 menunjukkan satelit beserta sensor perekam yang menangkap pantulan gelombang elektromagnetik dari objek."
+      },
+      {
+        no: 39,
+        topic: "Pengetahuan Dasar Pemetaan",
+        question: "Perhatikan ilustrasi tiga jenis bidang proyeksi peta berikut! Untuk memetakan wilayah <strong>kutub (seperti Antartika atau Samudra Arktik)</strong> agar distorsi wilayahnya paling minimal, bidang proyeksi yang paling tepat digunakan beserta alasannya adalah ....",
+        illustration: `
+          <svg viewBox="0 0 620 180" class="w-full max-w-md max-h-28 h-auto" xmlns="http://www.w3.org/2000/svg">
+            <rect width="620" height="180" rx="12" fill="#f8fafc"/>
+            <g transform="translate(105, 85)">
+              <rect x="-42" y="-52" width="84" height="104" fill="none" stroke="#0284c7" stroke-width="2" stroke-dasharray="4 2"/>
+              <circle cx="0" cy="0" r="36" fill="#bae6fd" stroke="#0369a1" stroke-width="2"/>
+              <ellipse cx="0" cy="0" rx="36" ry="10" fill="none" stroke="#0369a1" stroke-width="1.5"/>
+              <text x="0" y="72" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e293b">A. Proyeksi Silinder</text>
+            </g>
+            <g transform="translate(310, 85)">
+              <polygon points="0,-62 -52,32 52,32" fill="none" stroke="#0d9488" stroke-width="2" stroke-dasharray="4 2"/>
+              <circle cx="0" cy="6" r="34" fill="#99f6e4" stroke="#0f766e" stroke-width="2"/>
+              <path d="M -29 -11 Q 0 2 29 -11" fill="none" stroke="#0f766e" stroke-width="1.5"/>
+              <text x="0" y="72" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e293b">B. Proyeksi Kerucut</text>
+            </g>
+            <g transform="translate(515, 85)">
+              <line x1="-55" y1="-42" x2="55" y2="-42" stroke="#d97706" stroke-width="3"/>
+              <circle cx="0" cy="-4" r="38" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+              <circle cx="0" cy="-42" r="4" fill="#dc2626"/>
+              <text x="0" y="72" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e293b">C. Proyeksi Bidang Datar</text>
+            </g>
+          </svg>
+        `,
+        options: [
+          "Proyeksi bidang datar (azimutal), karena bidang datar menyinggung langsung titik pusat kutub sehingga distorsi di kutub sangat kecil",
+          "Proyeksi silinder, karena garis paralelnya sejajar dengan lintang tinggi",
+          "Proyeksi kerucut, karena puncak kerucut berimpit dengan garis khatulistiwa",
+          "Proyeksi silinder normal, karena sangat akurat untuk daerah lintang 90°",
+          "Proyeksi kerucut transversal, karena memetakan seluruh permukaan bola bumi tanpa distorsi"
+        ],
+        answer: 0,
+        explanation: "Proyeksi bidang datar (azimutal/zenital) posisi polar menyinggung langsung titik kutub sehingga wilayah kutub dipetakan dengan distorsi paling minimal."
+      },
+      {
+        no: 40,
+        topic: "Pengetahuan Dasar Pemetaan",
+        question: "Jarak antara Kota X ke Kota Y pada peta terukur sebesar 5 cm. Apabila jarak sebenarnya di lapangan sejauh 50 km, maka skala peta tersebut adalah ....",
+        options: ["1 : 10.000", "1 : 100.000", "1 : 500.000", "1 : 1.000.000", "1 : 10.000.000"],
+        answer: 3,
+        explanation: "Skala = Jarak Peta : Jarak Sebenarnya = 5 cm : 50 km = 5 cm : 5.000.000 cm = 1 : 1.000.000."
+      }
+    ];
+
+    // State Aplikasi
+    let selectedPackage = "Paket A";
+    let quizQuestions = questionsPackageA;
+    let currentQuestionIndex = 0;
+    let userAnswers = new Array(quizQuestions.length).fill(null);
+    let flaggedQuestions = new Array(quizQuestions.length).fill(false);
+    let studentName = "";
+    let studentClass = "";
+    let isAdminMode = false;
+    let isAnswerRevealed = false;
+    const TOTAL_TIME_SECONDS = 60 * 60;
+    let remainingSeconds = TOTAL_TIME_SECONDS;
+    let timerInterval = null;
+    let isQuizFinished = false;
+
+    // Elemen DOM
+    const startScreen = document.getElementById("start-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+
+    const studentNameInput = document.getElementById("student-name");
+    const studentClassInput = document.getElementById("student-class");
+    const btnSelectPaketA = document.getElementById("btn-select-paket-a");
+    const btnSelectPaketB = document.getElementById("btn-select-paket-b");
+    const badgePaketA = document.getElementById("badge-paket-a");
+    const badgePaketB = document.getElementById("badge-paket-b");
+    const startBtnPackageLabel = document.getElementById("start-btn-package-label");
+    const startError = document.getElementById("start-error");
+    const btnStartQuiz = document.getElementById("btn-start-quiz");
+
+    const timerDisplay = document.getElementById("timer-display");
+    const timerBox = document.getElementById("timer-box");
+    const timerIcon = document.getElementById("timer-icon");
+
+    const currentPackageBadgeEl = document.getElementById("current-package-badge");
+    const currentQNumEl = document.getElementById("current-q-num");
+    const currentTopicBadgeEl = document.getElementById("current-topic-badge");
+    const displayStudentInfoEl = document.getElementById("display-student-info");
+    const questionIllustrationEl = document.getElementById("question-illustration");
+    const questionTextEl = document.getElementById("question-text");
+    const optionsContainerEl = document.getElementById("options-container");
+
+    const btnPrev = document.getElementById("btn-prev");
+    const btnNext = document.getElementById("btn-next");
+    const btnNextText = document.getElementById("btn-next-text");
+    const btnFlag = document.getElementById("btn-flag");
+    const flagCheckbox = document.getElementById("flag-checkbox");
+    const btnAdminReveal = document.getElementById("btn-admin-reveal");
+    const btnAdminRevealText = document.getElementById("btn-admin-reveal-text");
+    const adminAnswerBox = document.getElementById("admin-answer-box");
+    const adminCorrectOption = document.getElementById("admin-correct-option");
+    const adminExplanationText = document.getElementById("admin-explanation-text");
+
+    const questionGridEl = document.getElementById("question-grid");
+    const answeredCountEl = document.getElementById("answered-count");
+    const mobileAnsweredCountEl = document.getElementById("mobile-answered-count");
+    const btnFinishQuiz = document.getElementById("btn-finish-quiz");
+    const btnMobileFinish = document.getElementById("btn-mobile-finish");
+    const navSidebar = document.getElementById("nav-sidebar");
+    const btnMobileNav = document.getElementById("btn-mobile-nav");
+    const btnCloseMobileNav = document.getElementById("btn-close-mobile-nav");
+
+    const confirmModal = document.getElementById("confirm-modal");
+    const confirmMessage = document.getElementById("confirm-message");
+    const btnCancelFinish = document.getElementById("btn-cancel-finish");
+    const btnConfirmFinish = document.getElementById("btn-confirm-finish");
+
+    // Logika Pemilihan Paket Soal (A atau B)
+    function selectPackage(pkg) {
+      selectedPackage = pkg;
+      startBtnPackageLabel.textContent = pkg;
+
+      if (pkg === "Paket A") {
+        quizQuestions = questionsPackageA;
+        btnSelectPaketA.className = "package-btn flex items-center justify-between p-2.5 sm:p-3 rounded-xl border-2 border-emerald-600 bg-emerald-50 text-emerald-950 transition cursor-pointer text-left";
+        badgePaketA.className = "w-5 h-5 rounded-full bg-emerald-600 text-white flex items-center justify-center text-xs font-bold shrink-0";
+
+        btnSelectPaketB.className = "package-btn flex items-center justify-between p-2.5 sm:p-3 rounded-xl border-2 border-slate-200 bg-white hover:border-teal-400 text-slate-700 transition cursor-pointer text-left";
+        badgePaketB.className = "w-5 h-5 rounded-full border-2 border-slate-300 text-transparent flex items-center justify-center text-xs font-bold shrink-0";
+      } else {
+        quizQuestions = questionsPackageB;
+        btnSelectPaketB.className = "package-btn flex items-center justify-between p-2.5 sm:p-3 rounded-xl border-2 border-emerald-600 bg-emerald-50 text-emerald-950 transition cursor-pointer text-left";
+        badgePaketB.className = "w-5 h-5 rounded-full bg-emerald-600 text-white flex items-center justify-center text-xs font-bold shrink-0";
+
+        btnSelectPaketA.className = "package-btn flex items-center justify-between p-2.5 sm:p-3 rounded-xl border-2 border-slate-200 bg-white hover:border-teal-400 text-slate-700 transition cursor-pointer text-left";
+        badgePaketA.className = "w-5 h-5 rounded-full border-2 border-slate-300 text-transparent flex items-center justify-center text-xs font-bold shrink-0";
+      }
+    }
+
+    btnSelectPaketA.addEventListener("click", () => selectPackage("Paket A"));
+    btnSelectPaketB.addEventListener("click", () => selectPackage("Paket B"));
+
+    // Format Detik ke HH:MM:SS
+    function formatTime(totalSec) {
+      const hrs = Math.floor(totalSec / 3600);
+      const mins = Math.floor((totalSec % 3600) / 60);
+      const secs = totalSec % 60;
+      return [
+        String(hrs).padStart(2, "0"),
+        String(mins).padStart(2, "0"),
+        String(secs).padStart(2, "0")
+      ].join(":");
+    }
+
+    // Mulai Timer Berjalan
+    function startTimer() {
+      clearInterval(timerInterval);
+      timerDisplay.textContent = formatTime(remainingSeconds);
+
+      timerInterval = setInterval(() => {
+        if (remainingSeconds > 0) {
+          remainingSeconds--;
+          timerDisplay.textContent = formatTime(remainingSeconds);
+
+          if (remainingSeconds <= 300) {
+            timerBox.classList.remove("border-emerald-400/40");
+            timerBox.classList.add("border-rose-400", "bg-rose-950/80");
+            timerIcon.classList.remove("text-emerald-300");
+            timerIcon.classList.add("text-rose-400");
+          }
+        } else {
+          clearInterval(timerInterval);
+          submitQuiz();
+        }
+      }, 1000);
+    }
+
+    // Render Grid Nomor Soal
+    function renderQuestionGrid() {
+      questionGridEl.innerHTML = "";
+      let answeredTotal = 0;
+
+      quizQuestions.forEach((q, idx) => {
+        if (userAnswers[idx] !== null) answeredTotal++;
+
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.textContent = q.no;
+
+        let baseClasses = "h-8 sm:h-9 rounded-lg font-bold text-xs sm:text-sm transition flex items-center justify-center cursor-pointer ";
+        
+        if (idx === currentQuestionIndex) {
+          baseClasses += "ring-2 ring-teal-700 ring-offset-1 ";
+        }
+
+        if (flaggedQuestions[idx]) {
+          baseClasses += "bg-amber-400 text-amber-950 hover:bg-amber-500 shadow-xs";
+        } else if (userAnswers[idx] !== null) {
+          baseClasses += "bg-emerald-600 text-white hover:bg-emerald-700 shadow-xs";
+        } else if (idx === currentQuestionIndex) {
+          baseClasses += "bg-teal-50 text-teal-900 border border-teal-300";
+        } else {
+          baseClasses += "bg-slate-100 text-slate-700 border border-slate-200 hover:bg-slate-200";
+        }
+
+        btn.className = baseClasses;
+        btn.addEventListener("click", () => {
+          currentQuestionIndex = idx;
+          isAnswerRevealed = false;
+          closeMobileNavDrawer();
+          renderQuestionPage();
+        });
+
+        questionGridEl.appendChild(btn);
+      });
+
+      answeredCountEl.textContent = answeredTotal;
+      if (mobileAnsweredCountEl) mobileAnsweredCountEl.textContent = answeredTotal;
+    }
+
+    function openMobileNavDrawer() {
+      navSidebar.classList.remove("hidden");
+      navSidebar.classList.add("flex");
+    }
+
+    function closeMobileNavDrawer() {
+      navSidebar.classList.add("hidden");
+      navSidebar.classList.remove("flex");
+    }
+
+    btnMobileNav.addEventListener("click", openMobileNavDrawer);
+    btnCloseMobileNav.addEventListener("click", closeMobileNavDrawer);
+    navSidebar.addEventListener("click", (e) => {
+      if (e.target === navSidebar) closeMobileNavDrawer();
+    });
+
+    // Render Halaman Soal Aktif
+    function renderQuestionPage() {
+      const q = quizQuestions[currentQuestionIndex];
+      currentPackageBadgeEl.textContent = selectedPackage;
+      currentQNumEl.textContent = q.no;
+      currentTopicBadgeEl.textContent = q.topic;
+
+      if (q.illustration) {
+        questionIllustrationEl.innerHTML = q.illustration;
+        questionIllustrationEl.classList.remove("hidden");
+      } else {
+        questionIllustrationEl.innerHTML = "";
+        questionIllustrationEl.classList.add("hidden");
+      }
+
+      questionTextEl.innerHTML = q.question.replace(/\n/g, "<br>");
+
+      const optionLetters = ["A", "B", "C", "D", "E"];
+      optionsContainerEl.innerHTML = "";
+
+      q.options.forEach((optText, optIdx) => {
+        const isSelected = userAnswers[currentQuestionIndex] === optIdx;
+        const isCorrectHighlight = isAdminMode && isAnswerRevealed && optIdx === q.answer;
+
+        let buttonStyle = "border-slate-200 bg-white hover:border-teal-400 hover:bg-slate-50";
+        let badgeStyle = "bg-slate-100 text-slate-700 group-hover:bg-teal-100 group-hover:text-teal-800";
+        let textStyle = "text-slate-700 font-medium";
+
+        if (isCorrectHighlight) {
+          buttonStyle = "border-indigo-600 bg-indigo-50/90 shadow-xs";
+          badgeStyle = "bg-indigo-600 text-white";
+          textStyle = "font-bold text-indigo-950";
+        } else if (isSelected) {
+          buttonStyle = "border-emerald-600 bg-emerald-50/90 shadow-xs";
+          badgeStyle = "bg-emerald-600 text-white";
+          textStyle = "font-semibold text-emerald-950";
+        }
+
+        const optBtn = document.createElement("button");
+        optBtn.type = "button";
+        optBtn.className = `w-full text-left px-3 py-2 sm:px-3.5 sm:py-2.5 rounded-xl border-2 transition flex items-center gap-3 cursor-pointer group ${buttonStyle}`;
+
+        optBtn.innerHTML = `
+          <span class="w-7 h-7 rounded-lg font-extrabold text-xs sm:text-sm flex items-center justify-center shrink-0 transition ${badgeStyle}">
+            ${optionLetters[optIdx]}
+          </span>
+          <span class="text-xs sm:text-sm leading-snug ${textStyle}">
+            ${optText}
+          </span>
+        `;
+
+        optBtn.addEventListener("click", () => {
+          userAnswers[currentQuestionIndex] = optIdx;
+          renderQuestionPage();
+        });
+
+        optionsContainerEl.appendChild(optBtn);
+      });
+
+      // Panel Jawaban Khusus Mode Admin
+      if (isAdminMode) {
+        btnAdminReveal.classList.remove("hidden");
+        btnAdminReveal.classList.add("flex");
+        if (isAnswerRevealed) {
+          btnAdminRevealText.textContent = "Tutup Jawaban";
+          adminCorrectOption.textContent = `${optionLetters[q.answer]}. ${q.options[q.answer]}`;
+          adminExplanationText.textContent = q.explanation;
+          adminAnswerBox.classList.remove("hidden");
+        } else {
+          btnAdminRevealText.textContent = "Buka Jawaban";
+          adminAnswerBox.classList.add("hidden");
+        }
+      } else {
+        btnAdminReveal.classList.add("hidden");
+        btnAdminReveal.classList.remove("flex");
+        adminAnswerBox.classList.add("hidden");
+      }
+
+      flagCheckbox.checked = flaggedQuestions[currentQuestionIndex];
+
+      btnPrev.disabled = currentQuestionIndex === 0;
+      if (currentQuestionIndex === quizQuestions.length - 1) {
+        btnNextText.textContent = "Selesai";
+        btnNext.classList.remove("bg-emerald-700", "hover:bg-emerald-800");
+        btnNext.classList.add("bg-rose-600", "hover:bg-rose-700");
+      } else {
+        btnNextText.textContent = "Selanjutnya";
+        btnNext.classList.remove("bg-rose-600", "hover:bg-rose-700");
+        btnNext.classList.add("bg-emerald-700", "hover:bg-emerald-800");
+      }
+
+      renderQuestionGrid();
+    }
+
+    // Event Mulai Kuis
+    btnStartQuiz.addEventListener("click", () => {
+      const nameVal = studentNameInput.value.trim();
+      const classVal = studentClassInput.value.trim();
+
+      if (!nameVal || !classVal) {
+        startError.classList.remove("hidden");
+        return;
+      }
+
+      startError.classList.add("hidden");
+      studentName = nameVal;
+      studentClass = classVal;
+      isAdminMode = (nameVal.toLowerCase() === "admin" && classVal.toLowerCase() === "sman 54 jakarta");
+      isAnswerRevealed = false;
+
+      userAnswers = new Array(quizQuestions.length).fill(null);
+      flaggedQuestions = new Array(quizQuestions.length).fill(false);
+      currentQuestionIndex = 0;
+
+      document.getElementById("header-subtitle").textContent = `Geografi • Kelas X SMA/MA (${selectedPackage})`;
+      displayStudentInfoEl.textContent = isAdminMode
+        ? `${studentName} (${studentClass}) • Mode Admin`
+        : `${studentName} (${studentClass})`;
+
+      startScreen.style.display = "none";
+      startScreen.classList.add("hidden");
+      quizScreen.style.display = "";
+      quizScreen.classList.remove("hidden");
+      quizScreen.classList.add("flex");
+
+      renderQuestionPage();
+      startTimer();
+    });
+
+    btnAdminReveal.addEventListener("click", () => {
+      if (!isAdminMode) return;
+      isAnswerRevealed = !isAnswerRevealed;
+      renderQuestionPage();
+    });
+
+    btnPrev.addEventListener("click", () => {
+      if (currentQuestionIndex > 0) {
+        currentQuestionIndex--;
+        isAnswerRevealed = false;
+        renderQuestionPage();
+      }
+    });
+
+    btnNext.addEventListener("click", () => {
+      if (currentQuestionIndex < quizQuestions.length - 1) {
+        currentQuestionIndex++;
+        isAnswerRevealed = false;
+        renderQuestionPage();
+      } else {
+        openConfirmModal();
+      }
+    });
+
+    btnFlag.addEventListener("click", () => {
+      flaggedQuestions[currentQuestionIndex] = !flaggedQuestions[currentQuestionIndex];
+      renderQuestionPage();
+    });
+
+    function openConfirmModal() {
+      const unansweredCount = userAnswers.filter(a => a === null).length;
+      if (unansweredCount > 0) {
+        confirmMessage.innerHTML = `Masih terdapat <strong>${unansweredCount} soal yang belum dijawab</strong>. Apakah Anda yakin ingin mengakhiri ujian dan mengumpulkan jawaban sekarang?`;
+      } else {
+        confirmMessage.innerHTML = `Semua 40 soal telah terjawab. Apakah Anda yakin ingin mengakhiri ujian dan melihat hasil nilai Anda?`;
+      }
+      confirmModal.classList.remove("hidden");
+      confirmModal.classList.add("flex");
+    }
+
+    btnFinishQuiz.addEventListener("click", () => {
+      closeMobileNavDrawer();
+      openConfirmModal();
+    });
+    btnMobileFinish.addEventListener("click", openConfirmModal);
+
+    btnCancelFinish.addEventListener("click", () => {
+      confirmModal.classList.add("hidden");
+      confirmModal.classList.remove("flex");
+    });
+
+    btnConfirmFinish.addEventListener("click", () => {
+      confirmModal.classList.add("hidden");
+      confirmModal.classList.remove("flex");
+      submitQuiz();
+    });
+
+    // Hitung & Tampilkan Hasil Ujian + Kirim ke Google Spreadsheet
+    function submitQuiz() {
+      if (isQuizFinished) return;
+      isQuizFinished = true;
+      clearInterval(timerInterval);
+
+      let correctCount = 0;
+      let wrongCount = 0;
+      let unansweredCount = 0;
+
+      quizQuestions.forEach((q, idx) => {
+        const ans = userAnswers[idx];
+        if (ans === null) {
+          unansweredCount++;
+        } else if (ans === q.answer) {
+          correctCount++;
+        } else {
+          wrongCount++;
+        }
+      });
+
+      const score = Math.round((correctCount / quizQuestions.length) * 100);
+      const timeUsed = TOTAL_TIME_SECONDS - remainingSeconds;
+
+      let predicate = "Perlu Bimbingan";
+      if (score >= 90) predicate = "Sangat Baik (Istimewa)";
+      else if (score >= 80) predicate = "Baik (Memuaskan)";
+      else if (score >= 70) predicate = "Cukup (Tuntas)";
+
+      document.getElementById("result-student-identity").textContent = `Peserta: ${studentName} • Kelas: ${studentClass} • ${selectedPackage}`;
+      document.getElementById("final-score").textContent = score;
+      document.getElementById("score-predicate").textContent = predicate;
+      document.getElementById("stat-correct").textContent = `${correctCount} Soal`;
+      document.getElementById("stat-wrong").textContent = `${wrongCount} Soal`;
+      document.getElementById("stat-unanswered").textContent = `${unansweredCount} Soal`;
+      document.getElementById("stat-time-used").textContent = formatTime(timeUsed);
+
+      const optionLetters = ["A", "B", "C", "D", "E"];
+      const detailJawabanStr = quizQuestions
+        .map((q, idx) => `${q.no}:${userAnswers[idx] !== null ? optionLetters[userAnswers[idx]] : "-"}`)
+        .join(", ");
+
+      const payloadData = {
+        nama: studentName,
+        kelas: studentClass,
+        paket: selectedPackage,
+        nilai: score,
+        predikat: predicate,
+        benar: correctCount,
+        salah: wrongCount,
+        kosong: unansweredCount,
+        durasi: formatTime(timeUsed),
+        detailJawaban: detailJawabanStr
+      };
+
+      const syncStatusEl = document.getElementById("gsheet-sync-status");
+
+      // Deteksi otomatis: Jika dibuka langsung sebagai Web App Apps Script atau via URL Fetch (Vercel/Google Sites)
+      if (typeof google !== "undefined" && google.script && google.script.run) {
+        syncStatusEl.textContent = "Menyimpan nilai ke Google Spreadsheet...";
+        syncStatusEl.className = "mt-3 text-xs font-semibold text-amber-700 animate-pulse";
+
+        google.script.run
+          .withSuccessHandler((res) => {
+            syncStatusEl.textContent = "✓ " + (res.message || "Nilai berhasil disimpan ke Google Spreadsheet");
+            syncStatusEl.className = "mt-3 text-xs font-bold text-emerald-700";
+          })
+          .withFailureHandler((err) => {
+            syncStatusEl.textContent = "⚠ Gagal menyimpan: " + err.message;
+            syncStatusEl.className = "mt-3 text-xs font-semibold text-rose-600";
+          })
+          .simpanHasilUjian(payloadData);
+      } else if (GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL.startsWith("https://script.google.com/")) {
+        syncStatusEl.textContent = "Menyimpan nilai ke Google Spreadsheet...";
+        syncStatusEl.className = "mt-3 text-xs font-semibold text-amber-700 animate-pulse";
+
+        fetch(GOOGLE_SCRIPT_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify(payloadData)
+        })
+          .then(() => {
+            syncStatusEl.textContent = "✓ Nilai berhasil dikirim ke Google Spreadsheet";
+            syncStatusEl.className = "mt-3 text-xs font-bold text-emerald-700";
+          })
+          .catch((err) => {
+            syncStatusEl.textContent = "⚠ Gagal mengirim ke Spreadsheet: " + err.message;
+            syncStatusEl.className = "mt-3 text-xs font-semibold text-rose-600";
+          });
+      } else {
+        syncStatusEl.textContent = "Mode Offline (Isi GOOGLE_SCRIPT_URL pada kode HTML untuk koneksi Spreadsheet)";
+        syncStatusEl.className = "mt-3 text-[11px] font-medium text-slate-500";
+      }
+
+      renderReviewList();
+
+      quizScreen.style.display = "none";
+      quizScreen.classList.add("hidden");
+      quizScreen.classList.remove("flex");
+      resultScreen.style.display = "block";
+      resultScreen.classList.remove("hidden");
+    }
+
+    // Render Pembahasan Soal (HANYA UNTUK SOAL YANG SUDAH DIJAWAB PESERTA DIDIK)
+    function renderReviewList() {
+      const reviewListEl = document.getElementById("review-list");
+      const reviewHeaderTitleEl = document.getElementById("review-header-title");
+      const optionLetters = ["A", "B", "C", "D", "E"];
+      reviewListEl.innerHTML = "";
+
+      let answeredReviewCount = 0;
+
+      quizQuestions.forEach((q, idx) => {
+        const userAns = userAnswers[idx];
+
+        // Jangan tampilkan soal dan pembahasan jika soal belum dijawab oleh peserta didik
+        if (userAns === null) return;
+
+        answeredReviewCount++;
+        const isCorrect = userAns === q.answer;
+
+        const statusBadge = isCorrect
+          ? `<span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800">Benar</span>`
+          : `<span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-rose-100 text-rose-800">Salah</span>`;
+
+        const cardBorder = isCorrect ? "border-emerald-300" : "border-rose-300";
+        const userText = `${optionLetters[userAns]}. ${q.options[userAns]}`;
+        const correctText = `${optionLetters[q.answer]}. ${q.options[q.answer]}`;
+
+        const itemDiv = document.createElement("div");
+        itemDiv.className = `p-4 rounded-xl border ${cardBorder} bg-slate-50/70 space-y-2`;
+        itemDiv.innerHTML = `
+          <div class="flex items-center justify-between gap-2">
+            <span class="font-bold text-sm text-slate-800">Soal No. ${q.no} <span class="text-xs font-normal text-slate-500">(${q.topic})</span></span>
+            ${statusBadge}
+          </div>
+          <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">${q.question.replace(/\n/g, "<br>")}</p>
+          <div class="text-xs sm:text-sm space-y-1 pt-1">
+            <div><span class="font-semibold text-slate-600">Jawaban Anda:</span> <span class="${isCorrect ? 'text-emerald-700 font-bold' : 'text-rose-700 font-semibold'}">${userText}</span></div>
+            <div><span class="font-semibold text-slate-600">Kunci Jawaban:</span> <span class="text-emerald-700 font-bold">${correctText}</span></div>
+          </div>
+          <div class="text-xs bg-white border border-slate-200 rounded-lg p-3 text-slate-600 mt-2">
+            <strong class="text-teal-800">Pembahasan:</strong> ${q.explanation}
+          </div>
+        `;
+        reviewListEl.appendChild(itemDiv);
+      });
+
+      reviewHeaderTitleEl.textContent = `Tinjauan Jawaban & Pembahasan (${answeredReviewCount} Soal Terjawab)`;
+
+      if (answeredReviewCount === 0) {
+        reviewListEl.innerHTML = `
+          <div class="p-6 text-center bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-600">
+            Anda belum menjawab satu pun soal sehingga tidak ada pembahasan jawaban yang ditampilkan.
+          </div>
+        `;
+      }
+    }
+
+    document.getElementById("btn-toggle-review").addEventListener("click", () => {
+      const reviewContainer = document.getElementById("review-container");
+      reviewContainer.classList.toggle("hidden");
+    });
+
+    document.getElementById("btn-restart").addEventListener("click", () => {
+      currentQuestionIndex = 0;
+      userAnswers = new Array(quizQuestions.length).fill(null);
+      flaggedQuestions = new Array(quizQuestions.length).fill(false);
+      remainingSeconds = TOTAL_TIME_SECONDS;
+      isQuizFinished = false;
+
+      timerBox.classList.remove("border-rose-400", "bg-rose-950/80");
+      timerBox.classList.add("border-emerald-400/40");
+      timerIcon.classList.remove("text-rose-400");
+      timerIcon.classList.add("text-emerald-300");
+      timerDisplay.textContent = formatTime(remainingSeconds);
+      document.getElementById("header-subtitle").textContent = "Geografi • Kelas X SMA/MA";
+
+      document.getElementById("review-container").classList.add("hidden");
+      resultScreen.style.display = "none";
+      resultScreen.classList.add("hidden");
+      startScreen.style.display = "flex";
+      startScreen.classList.remove("hidden");
+    });
+  </script>
+</body>
+</html>
