@@ -54,9 +54,9 @@
         </div>
       </div>
 
-      <!-- Kanan Atas: Waktu Berjalan (Timer) -->
+      <!-- Kanan Atas: Waktu Berjalan (Timer - Tersembunyi di Halaman Dashboard Awal) -->
       <div class="flex items-center shrink-0">
-        <div id="timer-box" class="flex items-center gap-1.5 sm:gap-2 bg-slate-900/60 border border-emerald-400/40 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-xl shadow-inner">
+        <div id="timer-box" class="hidden items-center gap-1.5 sm:gap-2 bg-slate-900/60 border border-emerald-400/40 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-xl shadow-inner">
           <svg id="timer-icon" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-300 animate-pulse shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="10"></circle>
             <polyline points="12 6 12 12 16 14"></polyline>
@@ -425,14 +425,14 @@
         Latihan Asesmen Akhir Semester Geografi &bull; Paket Soal A &amp; B
       </div>
       <div class="w-full sm:w-auto text-center font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-lg truncate">
-        Di Kembangkan Oleh : Aris Wicaksono, S.Pd.
+        Dikembangkan Oleh : Aris Wicaksono, S.Pd.
       </div>
     </div>
   </footer>
 
   <!-- SCRIPT LOGIKA APLIKASI KUIS & BANK SOAL PAKET A & B -->
   <script>
-    // TEMPELKAN URL WEB APP GOOGLE APPS SCRIPT ANDA DI BAWAH INI (untuk Vercel / Google Sites):
+    // TEMPELKAN URL WEB APP GOOGLE APPS SCRIPT ANDA DI BAWAH INI:
     const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz4sYvfTaeNL14F47omH4evkP3BeczAks5xQydpZ-oCZVcSCliTajJMvJPr8vQgl1O0/exec";
 
     // PAKET SOAL A (40 Soal sesuai Kisi-Kisi No. 1 - 40)
@@ -1616,6 +1616,10 @@
       quizScreen.classList.remove("hidden");
       quizScreen.classList.add("flex");
 
+      // Munculkan timer saat mulai mengerjakan
+      timerBox.classList.remove("hidden");
+      timerBox.classList.add("flex");
+
       renderQuestionPage();
       startTimer();
     });
@@ -1677,7 +1681,7 @@
       submitQuiz();
     });
 
-    // Hitung & Tampilkan Hasil Ujian + Kirim ke Google Spreadsheet
+    // Hitung & Tampilkan Hasil Ujian
     function submitQuiz() {
       if (isQuizFinished) return;
       isQuizFinished = true;
@@ -1733,23 +1737,7 @@
       };
 
       const syncStatusEl = document.getElementById("gsheet-sync-status");
-
-      // Deteksi otomatis: Jika dibuka langsung sebagai Web App Apps Script atau via URL Fetch (Vercel/Google Sites)
-      if (typeof google !== "undefined" && google.script && google.script.run) {
-        syncStatusEl.textContent = "Menyimpan nilai ke Google Spreadsheet...";
-        syncStatusEl.className = "mt-3 text-xs font-semibold text-amber-700 animate-pulse";
-
-        google.script.run
-          .withSuccessHandler((res) => {
-            syncStatusEl.textContent = "✓ " + (res.message || "Nilai berhasil disimpan ke Google Spreadsheet");
-            syncStatusEl.className = "mt-3 text-xs font-bold text-emerald-700";
-          })
-          .withFailureHandler((err) => {
-            syncStatusEl.textContent = "⚠ Gagal menyimpan: " + err.message;
-            syncStatusEl.className = "mt-3 text-xs font-semibold text-rose-600";
-          })
-          .simpanHasilUjian(payloadData);
-      } else if (GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL.startsWith("https://script.google.com/")) {
+      if (GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL.startsWith("https://script.google.com/")) {
         syncStatusEl.textContent = "Menyimpan nilai ke Google Spreadsheet...";
         syncStatusEl.className = "mt-3 text-xs font-semibold text-amber-700 animate-pulse";
 
@@ -1849,8 +1837,8 @@
       remainingSeconds = TOTAL_TIME_SECONDS;
       isQuizFinished = false;
 
-      timerBox.classList.remove("border-rose-400", "bg-rose-950/80");
-      timerBox.classList.add("border-emerald-400/40");
+      timerBox.classList.remove("border-rose-400", "bg-rose-950/80", "flex");
+      timerBox.classList.add("border-emerald-400/40", "hidden");
       timerIcon.classList.remove("text-rose-400");
       timerIcon.classList.add("text-emerald-300");
       timerDisplay.textContent = formatTime(remainingSeconds);
